@@ -1,0 +1,7 @@
+*
+
+!.gitignore
+!VLSI_Project/
+!VLSI_Project/*
+!VLSI_Project/*/*/
+!VLSI_Project/*/*/*
