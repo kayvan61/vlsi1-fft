@@ -1,26 +1,25 @@
 \o Program:		@(#)$CDS: libManager version 6.1.8 - CAT37 09/24/2018 21:00 (ip-172-18-22-224) $
 \o Sub version:		sub-version  p015 
-\o Arguments:		-unmapped -mpssession virtuoso35126 -mpshost kamek.ece.utexas.edu 
-\o Working Directory:	kamek.ece.utexas.edu:/home/ecelrc/students/amansoorshai/vlsi_fft
+\o Arguments:		-unmapped -mpssession virtuoso52538 -mpshost kamek.ece.utexas.edu 
+\o Working Directory:	kamek.ece.utexas.edu:/home/ecelrc/students/amansoorshai/vlsi1-fft
 \o 64-bit offsets
 \o Qt version: 		5.9.1
-\o changeWorkingDir("/home/ecelrc/students/amansoorshai/vlsi_fft") unnecessary.
+\o changeWorkingDir("/home/ecelrc/students/amansoorshai/vlsi1-fft") unnecessary.
 \o ddSetForcedLib("") unnecessary.
-\o Log file is "/home/ecelrc/students/amansoorshai/vlsi_fft/libManager.log".
+\o Log file is "/home/ecelrc/students/amansoorshai/vlsi1-fft/libManager.log".
 \o Opening libManager window.
 \a nrSetWindowVisibility(cdsLibManager "show")
 \o MPS service: map window
 \o Library Manager customization server connected.
 \a nrSetCurrentWindow(cdsLibManager)
 \a nrResizeWindow(cdsLibManager list(588 185 1603 911))
-\a cdsLibManager->libListBox->value = "NCSU_Devices_FreePDK45"
-\a cdsLibManager->libLineEdit->value = "NCSU_Devices_FreePDK45"
-\a cdsLibManager->libListBox->value = "NCSU_TechLib_FreePDK45"
-\a cdsLibManager->libLineEdit->value = "NCSU_TechLib_FreePDK45"
-\a cdsLibManager->libListBox->value = "NCSU_Devices_FreePDK45"
-\a cdsLibManager->libLineEdit->value = "NCSU_Devices_FreePDK45"
+\a cdsLibManager->libListBox->value = "fft"
+\a cdsLibManager->libLineEdit->value = "fft"
+\a cdsLibManager->cellListBox->value = "PostProcUnit"
+\a cdsLibManager->cellLineEdit->value = "PostProcUnit"
+\a cdsLibManager->cellListBox->value = "GBuffer"
+\a cdsLibManager->cellLineEdit->value = "GBuffer"
+\a cdsLibManager->cellListBox->value = "PostProcUnit"
+\a cdsLibManager->cellLineEdit->value = "PostProcUnit"
 \a nrSetWindowVisibility(cdsLibManager "hide")
 \a _lmgrCloseIconify("cdsLibManager" 1)
-\o MPS service: shutdown
-\o libManager is exiting.
-\a exit(0)
