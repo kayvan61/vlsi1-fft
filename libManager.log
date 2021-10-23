@@ -1,6 +1,6 @@
 \o Program:		@(#)$CDS: libManager version 6.1.8 - CAT37 09/24/2018 21:00 (ip-172-18-22-224) $
 \o Sub version:		sub-version  p015 
-\o Arguments:		-unmapped -mpssession virtuoso210348 -mpshost kamek.ece.utexas.edu 
+\o Arguments:		-unmapped -mpssession virtuoso52538 -mpshost kamek.ece.utexas.edu 
 \o Working Directory:	kamek.ece.utexas.edu:/home/ecelrc/students/amansoorshai/vlsi1-fft
 \o 64-bit offsets
 \o Qt version: 		5.9.1
@@ -15,6 +15,7 @@
 \a nrResizeWindow(cdsLibManager list(588 185 1603 911))
 \a cdsLibManager->libListBox->value = "fft"
 \a cdsLibManager->libLineEdit->value = "fft"
+<<<<<<< HEAD
 \a cdsLibManager->cellListBox->value = "wallace_multi"
 \a cdsLibManager->cellLineEdit->value = "wallace_multi"
 \a cdsLibManager->viewListBox->value = "schematic"
@@ -124,3 +125,13 @@
 \a nrSetCurrentWindow(cdsLibManager)
 \a nrSetCurrentWindow(cdsLibManager)
 \a nrSetCurrentWindow(cdsLibManager)
+=======
+\a cdsLibManager->cellListBox->value = "PostProcUnit"
+\a cdsLibManager->cellLineEdit->value = "PostProcUnit"
+\a cdsLibManager->cellListBox->value = "GBuffer"
+\a cdsLibManager->cellLineEdit->value = "GBuffer"
+\a cdsLibManager->cellListBox->value = "PostProcUnit"
+\a cdsLibManager->cellLineEdit->value = "PostProcUnit"
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\a _lmgrCloseIconify("cdsLibManager" 1)
+>>>>>>> 20a7b4bbdc326ed09f6fe3a8eb82ffb1136e5847
