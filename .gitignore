@@ -1,4 +1,5 @@
 *.cdslck*
 *.log
 *~
-.cadence/
+.cadence/*
+simout.tmp
