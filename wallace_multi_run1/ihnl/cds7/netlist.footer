@@ -1,0 +1,5 @@
+xor_ I5 ( p_out, a_bit, b_bit);
+NAND2X1 I6 ( net10, a_bit, b_bit);
+INVX1 I7 ( g_out, net10);
+
+endmodule

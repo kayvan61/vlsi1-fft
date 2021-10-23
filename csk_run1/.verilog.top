@@ -1,0 +1,25 @@
+
+`timescale 1ns / 1ns
+
+module test;
+
+
+wire  COUT_adder;
+
+reg  CIN;
+
+wire [15:0]  S;
+
+reg [15:0]  B;
+reg [15:0]  A;
+
+// Buses in the design
+
+wire  [0:15]  P;
+
+wire  [1:15]  G;
+
+
+
+csk top(COUT_adder, S, A, B, CIN); 
+ 

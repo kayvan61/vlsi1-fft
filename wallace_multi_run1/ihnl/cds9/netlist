@@ -1,0 +1,24 @@
+// Library - fft, Cell - mux2, View - schematic
+// LAST TIME SAVED: Oct 18 21:29:35 2021
+// NETLIST TIME: Oct 23 13:56:20 2021
+`timescale 1ns / 1ns 
+
+module mux2 ( mux_out, A, B, S );
+
+output  mux_out;
+
+input  A, B, S;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "mux2";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+INVX1 I0 ( net12, S);
+NAND2X1 I3 ( mux_out, net11, net10);
+NAND2X1 I2 ( net10, B, net12);
+NAND2X1 I1 ( net11, A, S);
+
+endmodule

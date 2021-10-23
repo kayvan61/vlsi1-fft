@@ -1,0 +1,10 @@
+tmLCVDPLList = '((nil viewType "netlist" viewName "functional"
+    cellName "NMOS_VTL" libName "NCSU_Devices_FreePDK45"
+    ) 
+    (nil viewType "netlist" viewName "functional"
+    cellName "PMOS_VTL" libName "NCSU_Devices_FreePDK45"
+    )
+)
+xxxInternalGlobAliasList = '(nil globalExists t)
+hnlVerilogCdsGlobalsFileName = "cds_globals"
+hnlVerilogCdsGlobalsModuleName = "cds_globals"

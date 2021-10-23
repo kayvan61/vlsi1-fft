@@ -1,0 +1,110 @@
+// Library - fft, Cell - csk, View - schematic
+// LAST TIME SAVED: Oct 23 13:39:55 2021
+// NETLIST TIME: Oct 23 15:09:41 2021
+`timescale 1ns / 1ns 
+
+module csk ( COUT_adder, S, A, B, CIN );
+
+output  COUT_adder;
+
+input  CIN;
+
+output [15:0]  S;
+
+input [15:0]  B;
+input [15:0]  A;
+
+// Buses in the design
+
+wire  [0:15]  P;
+
+wire  [1:15]  G;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "csk";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+start_logic_csa I16 ( net6, P[0], A[0], B[0]);
+start_logic_csa I15 ( net7, P[1], A[1], B[1]);
+start_logic_csa I14 ( net0121, P[2], A[2], B[2]);
+start_logic_csa I13 ( net11, P[3], A[3], B[3]);
+start_logic_csa I12 ( net13, P[4], A[4], B[4]);
+start_logic_csa I11 ( net15, P[5], A[5], B[5]);
+start_logic_csa I10 ( net17, P[6], A[6], B[6]);
+start_logic_csa I9 ( net19, P[7], A[7], B[7]);
+start_logic_csa I8 ( net21, P[8], A[8], B[8]);
+start_logic_csa I7 ( net23, P[9], A[9], B[9]);
+start_logic_csa I6 ( net25, P[10], A[10], B[10]);
+start_logic_csa I5 ( net27, P[11], A[11], B[11]);
+start_logic_csa I4 ( net29, P[12], A[12], B[12]);
+start_logic_csa I3 ( net31, P[13], A[13], B[13]);
+start_logic_csa I2 ( net33, P[14], A[14], B[14]);
+start_logic_csa I1 ( net35, P[15], A[15], B[15]);
+grey_cell I60 ( G[15], net09, G[14], P[14]);
+grey_cell I59 ( G[14], net012, G[13], P[13]);
+grey_cell I58 ( G[13], net29, G[12], P[12]);
+grey_cell I52 ( G[11], net017, G[10], P[10]);
+grey_cell I51 ( G[10], net020, G[9], P[9]);
+grey_cell I48 ( G[9], net21, G[8], P[8]);
+grey_cell I42 ( G[7], net025, G[6], P[6]);
+grey_cell I41 ( G[6], net0125, G[5], P[5]);
+grey_cell I40 ( G[5], net13, G[4], P[4]);
+grey_cell I33 ( G[3], net033, G[2], P[2]);
+grey_cell I32 ( net052, net11, net033, P[3]);
+grey_cell I31 ( net053, net19, net025, P[7]);
+grey_cell I30 ( net054, net27, net017, P[11]);
+grey_cell I29 ( net055, net35, net09, P[15]);
+grey_cell I28 ( net09, net33, net012, P[14]);
+grey_cell I27 ( net017, net25, net020, P[10]);
+grey_cell I26 ( net025, net17, net0125, P[6]);
+grey_cell I25 ( net033, net0121, net38, P[2]);
+grey_cell I24 ( G[2], net38, G[1], P[1]);
+grey_cell I23 ( net012, net31, net29, P[13]);
+grey_cell I22 ( net020, net23, net21, P[9]);
+grey_cell I20 ( G[1], net6, CIN, P[0]);
+grey_cell I21 ( net0125, net15, net13, P[5]);
+grey_cell I17 ( net38, net7, net6, P[1]);
+mux2 I61 ( COUT, G[12], net055, net0117);
+mux2 I53 ( G[12], G[8], net054, net0107);
+mux2 I43 ( G[8], G[4], net053, net076);
+mux2 I34 ( G[4], CIN, net052, net047);
+NAND2X1 I84 ( net037, G[15], P[15]);
+NAND2X1 I82 ( COUT_adder, net0115, net037);
+NAND2X1 I63 ( net0132, P[12], P[13]);
+NAND2X1 I62 ( net0126, P[14], P[15]);
+NAND2X1 I55 ( net039, P[7], P[9]);
+NAND2X1 I54 ( net036, P[10], P[11]);
+NAND2X1 I45 ( net032, P[4], P[5]);
+NAND2X1 I44 ( net031, P[6], P[7]);
+NAND2X1 I36 ( net045, P[2], net11);
+NAND2X1 I35 ( net048, P[0], net7);
+OR2X2 I64 ( net0105, net0132, net0126);
+OR2X2 I56 ( net088, net039, net036);
+OR2X2 I46 ( net063, net032, net031);
+OR2X2 I38 ( net065, net048, net045);
+INVX1 I83 ( net0115, COUT);
+INVX1 I65 ( net0117, net0105);
+INVX1 I57 ( net0107, net088);
+INVX1 I47 ( net076, net063);
+INVX1 I39 ( net047, net065);
+xor_ I81 ( S[0], CIN, P[0]);
+xor_ I80 ( S[1], G[1], P[1]);
+xor_ I79 ( S[2], G[2], P[2]);
+xor_ I78 ( S[3], G[3], P[3]);
+xor_ I77 ( S[4], G[4], P[4]);
+xor_ I76 ( S[5], G[5], P[5]);
+xor_ I75 ( S[6], G[6], P[6]);
+xor_ I74 ( S[7], G[7], P[7]);
+xor_ I73 ( S[8], G[8], P[8]);
+xor_ I72 ( S[9], G[9], P[9]);
+xor_ I71 ( S[10], G[10], P[10]);
+xor_ I70 ( S[11], G[11], P[11]);
+xor_ I69 ( S[12], G[12], P[12]);
+xor_ I68 ( S[13], G[13], P[13]);
+xor_ I67 ( S[14], G[14], P[14]);
+xor_ I66 ( S[15], G[15], P[15]);
+
+endmodule

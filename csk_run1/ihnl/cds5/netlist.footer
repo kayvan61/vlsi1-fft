@@ -1,0 +1,6 @@
+INVX1 I0 ( net12, S);
+NAND2X1 I3 ( mux_out, net11, net10);
+NAND2X1 I2 ( net10, B, net12);
+NAND2X1 I1 ( net11, A, S);
+
+endmodule

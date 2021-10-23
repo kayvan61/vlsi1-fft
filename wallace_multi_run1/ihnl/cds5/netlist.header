@@ -1,0 +1,18 @@
+// Library - fft, Cell - half_adder, View - schematic
+// LAST TIME SAVED: Oct 22 14:51:20 2021
+// NETLIST TIME: Oct 23 13:56:20 2021
+`timescale 1ns / 1ns 
+
+module half_adder ( cout, sum, A, B );
+
+output  cout, sum;
+
+input  A, B;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "half_adder";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+

@@ -1,0 +1,18 @@
+// Library - lab2lib, Cell - OR2X2, View - schematic
+// LAST TIME SAVED: Sep 24 19:22:19 2019
+// NETLIST TIME: Oct 23 13:56:20 2021
+`timescale 1ns / 1ns 
+
+module OR2X2 ( Y, A, B );
+
+output  Y;
+
+input  A, B;
+
+
+specify 
+    specparam CDS_LIBNAME  = "lab2lib";
+    specparam CDS_CELLNAME = "OR2X2";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+

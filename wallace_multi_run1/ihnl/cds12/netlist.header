@@ -1,0 +1,60 @@
+// Library - fft, Cell - wallace_multi, View - schematic
+// LAST TIME SAVED: Oct 23 13:56:06 2021
+// NETLIST TIME: Oct 23 13:56:20 2021
+`timescale 1ns / 1ns 
+
+module wallace_multi ( cout, z, A, B );
+
+output  cout;
+
+
+output [31:0]  z;
+
+input [0:15]  B;
+input [0:15]  A;
+
+// Buses in the design
+
+wire  [15:0]  AB15;
+
+wire  [15:0]  AB14;
+
+wire  [15:0]  AB13;
+
+wire  [15:0]  AB12;
+
+wire  [15:0]  AB11;
+
+wire  [15:0]  AB10;
+
+wire  [15:0]  AB9;
+
+wire  [15:0]  AB8;
+
+wire  [15:0]  AB7;
+
+wire  [15:0]  AB6;
+
+wire  [23:0]  sumA;
+
+wire  [15:0]  AB5;
+
+wire  [15:0]  AB4;
+
+wire  [15:0]  AB2;
+
+wire  [15:0]  AB1;
+
+wire  [15:0]  AB0;
+
+wire  [23:0]  sumB;
+
+wire  [15:0]  AB3;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "wallace_multi";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+

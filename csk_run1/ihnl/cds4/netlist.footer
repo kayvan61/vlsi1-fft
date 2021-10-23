@@ -1,0 +1,5 @@
+NAND2X1 I1 ( g_i_j, net11, net10);
+NAND2X1 I0 ( net11, cdsNet0, p_i_k);
+INVX1 I2 ( net10, g_i_k);
+
+endmodule

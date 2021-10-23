@@ -1,0 +1,5 @@
+xor_ I0 ( sum, A, B);
+NAND2X1 I1 ( net12, B, A);
+INVX1 I2 ( cout, net12);
+
+endmodule

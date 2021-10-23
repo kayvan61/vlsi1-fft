@@ -1,0 +1,22 @@
+CADENCE IHNL11140
+$model
+lab2lib/INVX1/schematic INVX1
+fft/csk/schematic csk
+fft/wallace_multi/schematic wallace_multi
+fft/full_adder/schematic full_adder
+fft/mux2/schematic mux2
+fft/grey_cell/schematic grey_cell
+fft/half_adder/schematic half_adder
+lab2lib/NAND2X1/schematic NAND2X1
+fft/and_16bit_1bit/schematic and_16bit_1bit
+lab2lib/OR2X2/schematic OR2X2
+fft/xor/schematic xor_
+fft/start_logic_csa/schematic start_logic_csa
+fft/dot_array_gen/schematic dot_array_gen
+$endmodel
+$net
+gnd! cds_globals.gnd_
+vdd! cds_globals.vdd_
+$endnet
+$param
+$endparam

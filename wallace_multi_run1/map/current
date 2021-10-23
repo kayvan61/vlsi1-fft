@@ -1,0 +1,73 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "wallace_multi"
+  repList "behavioral functional system verilog pld_verilog lai_verilog lmsi_verilog schematic symbol"
+  stopList "verilog pld_verilog lai_verilog lmsi_verilog symbol"
+  globalList "vdd! gnd!"
+  hierDelim "."
+  hierPrefix "test.top"
+  globalHierPrefix "cds_globals."
+  netlistDir "/home/ecelrc/students/amansoorshai/vlsi1-fft/wallace_multi_run1"
+  busRef   "ORDERED"
+  netType   "BUS"
+  leftStr  "["
+  rangeStr  ":"
+  rightStr  "]"
+ )
+( defbus
+( "A" 0 15  "A" 0 15  )
+( "B" 0 15  "B" 0 15  )
+( "z" 31 0  "z" 31 0  )
+( "AB3" 15 0  "AB3" 15 0  )
+( "sumB" 23 0  "sumB" 23 0  )
+( "AB0" 15 0  "AB0" 15 0  )
+( "AB1" 15 0  "AB1" 15 0  )
+( "AB2" 15 0  "AB2" 15 0  )
+( "AB4" 15 0  "AB4" 15 0  )
+( "AB5" 15 0  "AB5" 15 0  )
+( "sumA" 23 0  "sumA" 23 0  )
+( "AB6" 15 0  "AB6" 15 0  )
+( "AB7" 15 0  "AB7" 15 0  )
+( "AB8" 15 0  "AB8" 15 0  )
+( "AB9" 15 0  "AB9" 15 0  )
+( "AB10" 15 0  "AB10" 15 0  )
+( "AB11" 15 0  "AB11" 15 0  )
+( "AB12" 15 0  "AB12" 15 0  )
+( "AB13" 15 0  "AB13" 15 0  )
+( "AB14" 15 0  "AB14" 15 0  )
+( "AB15" 15 0  "AB15" 15 0  )
+ )
+( net
+( "vdd!" "cds_globals.vdd_" )
+( "gnd!" "cds_globals.gnd_" )
+ )
+( model
+( "lab2lib/OR2X2/schematic" "OR2X2" )
+( "lab2lib/NAND2X1/schematic" "NAND2X1" )
+( "fft/and_16bit_1bit/schematic" "and_16bit_1bit" )
+( "lab2lib/INVX1/schematic" "INVX1" )
+( "fft/grey_cell/schematic" "grey_cell" )
+( "fft/xor/schematic" "xor_" )
+( "fft/dot_array_gen/schematic" "dot_array_gen" )
+( "fft/csk/schematic" "csk" )
+( "fft/full_adder/schematic" "full_adder" )
+( "fft/mux2/schematic" "mux2" )
+( "fft/wallace_multi/schematic" "wallace_multi" )
+( "fft/start_logic_csa/schematic" "start_logic_csa" )
+( "fft/half_adder/schematic" "half_adder" )
+ )
+( "OR2X2" "ihnl/cds10/map" )
+( "wallace_multi" "ihnl/cds12/map" )
+( "csk" "ihnl/cds11/map" )
+( "and_16bit_1bit" "ihnl/cds2/map" )
+( "INVX1" "ihnl/cds1/map" )
+( "NAND2X1" "ihnl/cds0/map" )
+( "full_adder" "ihnl/cds6/map" )
+( "dot_array_gen" "ihnl/cds3/map" )
+( "xor_" "ihnl/cds4/map" )
+( "half_adder" "ihnl/cds5/map" )
+( "start_logic_csa" "ihnl/cds7/map" )
+( "grey_cell" "ihnl/cds8/map" )
+( "mux2" "ihnl/cds9/map" )
+ )

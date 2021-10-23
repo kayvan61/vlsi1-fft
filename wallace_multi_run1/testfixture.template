@@ -1,0 +1,27 @@
+
+`timescale 1ns / 1ns
+
+module test;
+
+
+wire  cout;
+
+
+wire [31:0]  z;
+
+reg [0:15]  B;
+reg [0:15]  A;
+
+
+
+wallace_multi top(cout, z, A, B); 
+ 
+
+`ifdef verilog
+
+ //please enter any additional verilog stimulus in the /home/ecelrc/students/amansoorshai/vlsi1-fft/wallace_multi_run1/testfixture.verilog file
+`include "/home/ecelrc/students/amansoorshai/vlsi1-fft/wallace_multi_run1/testfixture.verilog"
+
+`endif
+
+endmodule 

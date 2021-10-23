@@ -1,0 +1,55 @@
+// Library - fft, Cell - and_16bit_1bit, View - schematic
+// LAST TIME SAVED: Oct 22 15:04:22 2021
+// NETLIST TIME: Oct 23 13:56:20 2021
+`timescale 1ns / 1ns 
+
+module and_16bit_1bit ( OUT, A, B );
+
+
+input  B;
+
+output [15:0]  OUT;
+
+input [15:0]  A;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "and_16bit_1bit";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+NAND2X1 I15 ( net25, A[0], B);
+NAND2X1 I14 ( net24, A[1], B);
+NAND2X1 I13 ( net23, A[2], B);
+NAND2X1 I12 ( net22, A[3], B);
+NAND2X1 I11 ( net21, A[4], B);
+NAND2X1 I10 ( net20, A[5], B);
+NAND2X1 I9 ( net19, A[6], B);
+NAND2X1 I8 ( net18, A[7], B);
+NAND2X1 I7 ( net17, A[8], B);
+NAND2X1 I6 ( net16, A[9], B);
+NAND2X1 I5 ( net15, A[10], B);
+NAND2X1 I4 ( net14, A[11], B);
+NAND2X1 I3 ( net13, A[12], B);
+NAND2X1 I2 ( net12, A[13], B);
+NAND2X1 I1 ( net11, A[14], B);
+NAND2X1 I0 ( net10, A[15], B);
+INVX1 I31 ( OUT[0], net25);
+INVX1 I30 ( OUT[1], net24);
+INVX1 I29 ( OUT[2], net23);
+INVX1 I28 ( OUT[3], net22);
+INVX1 I27 ( OUT[4], net21);
+INVX1 I26 ( OUT[5], net20);
+INVX1 I25 ( OUT[6], net19);
+INVX1 I24 ( OUT[7], net18);
+INVX1 I23 ( OUT[8], net17);
+INVX1 I22 ( OUT[9], net16);
+INVX1 I21 ( OUT[10], net15);
+INVX1 I20 ( OUT[11], net14);
+INVX1 I19 ( OUT[12], net13);
+INVX1 I18 ( OUT[13], net12);
+INVX1 I17 ( OUT[14], net11);
+INVX1 I16 ( OUT[15], net10);
+
+endmodule

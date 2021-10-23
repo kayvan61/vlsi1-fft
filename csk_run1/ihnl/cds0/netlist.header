@@ -1,0 +1,18 @@
+// Library - lab2lib, Cell - NAND2X1, View - schematic
+// LAST TIME SAVED: Sep  4 16:13:34 2021
+// NETLIST TIME: Oct 23 15:09:41 2021
+`timescale 1ns / 1ns 
+
+module NAND2X1 ( Y, A, B );
+
+output  Y;
+
+input  A, B;
+
+
+specify 
+    specparam CDS_LIBNAME  = "lab2lib";
+    specparam CDS_CELLNAME = "NAND2X1";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+

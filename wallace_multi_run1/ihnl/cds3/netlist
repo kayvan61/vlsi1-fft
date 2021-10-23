@@ -1,0 +1,55 @@
+// Library - fft, Cell - dot_array_gen, View - schematic
+// LAST TIME SAVED: Oct 22 15:14:44 2021
+// NETLIST TIME: Oct 23 13:56:20 2021
+`timescale 1ns / 1ns 
+
+module dot_array_gen ( AB0, AB1, AB2, AB3, AB4, AB5, AB6, AB7, AB8,
+     AB9, AB10, AB11, AB12, AB13, AB14, AB15, A, B );
+
+
+
+output [15:0]  AB8;
+output [15:0]  AB6;
+output [15:0]  AB14;
+output [15:0]  AB13;
+output [15:0]  AB11;
+output [15:0]  AB10;
+output [15:0]  AB12;
+output [15:0]  AB5;
+output [15:0]  AB15;
+output [15:0]  AB9;
+output [15:0]  AB4;
+output [15:0]  AB3;
+output [15:0]  AB1;
+output [15:0]  AB0;
+output [15:0]  AB7;
+output [15:0]  AB2;
+
+input [15:0]  A;
+input [15:0]  B;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "dot_array_gen";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+and_16bit_1bit I17 ( AB0[15:0], A[15:0], B[0]);
+and_16bit_1bit I16 ( AB1[15:0], A[15:0], B[1]);
+and_16bit_1bit I15 ( AB2[15:0], A[15:0], B[2]);
+and_16bit_1bit I14 ( AB3[15:0], A[15:0], B[3]);
+and_16bit_1bit I13 ( AB4[15:0], A[15:0], B[4]);
+and_16bit_1bit I12 ( AB5[15:0], A[15:0], B[5]);
+and_16bit_1bit I11 ( AB6[15:0], A[15:0], B[6]);
+and_16bit_1bit I10 ( AB7[15:0], A[15:0], B[7]);
+and_16bit_1bit I9 ( AB8[15:0], A[15:0], B[8]);
+and_16bit_1bit I8 ( AB9[15:0], A[15:0], B[9]);
+and_16bit_1bit I7 ( AB10[15:0], A[15:0], B[10]);
+and_16bit_1bit I6 ( AB11[15:0], A[15:0], B[11]);
+and_16bit_1bit I5 ( AB12[15:0], A[15:0], B[12]);
+and_16bit_1bit I4 ( AB13[15:0], A[15:0], B[13]);
+and_16bit_1bit I3 ( AB14[15:0], A[15:0], B[14]);
+and_16bit_1bit I2 ( AB15[15:0], A[15:0], B[15]);
+
+endmodule

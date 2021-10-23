@@ -1,0 +1,22 @@
+// Library - lab2lib, Cell - INVX1, View - schematic
+// LAST TIME SAVED: Feb  3 14:36:36 2009
+// NETLIST TIME: Oct 23 15:09:41 2021
+`timescale 1ns / 1ns 
+
+module INVX1 ( Y, A );
+
+output  Y;
+
+input  A;
+
+
+specify 
+    specparam CDS_LIBNAME  = "lab2lib";
+    specparam CDS_CELLNAME = "INVX1";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+pmos4 M0 ( cds_globals.vdd_, Y, A, cds_globals.vdd_);
+nmos4 M1 ( cds_globals.gnd_, Y, A, cds_globals.gnd_);
+
+endmodule

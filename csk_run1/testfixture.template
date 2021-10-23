@@ -1,0 +1,28 @@
+
+`timescale 1ns / 1ns
+
+module test;
+
+
+wire  COUT_adder;
+
+reg  CIN;
+
+wire [15:0]  S;
+
+reg [15:0]  B;
+reg [15:0]  A;
+
+
+
+csk top(COUT_adder, S, A, B, CIN); 
+ 
+
+`ifdef verilog
+
+ //please enter any additional verilog stimulus in the /home/ecelrc/students/amansoorshai/vlsi1-fft/csk_run1/testfixture.verilog file
+`include "/home/ecelrc/students/amansoorshai/vlsi1-fft/csk_run1/testfixture.verilog"
+
+`endif
+
+endmodule 

@@ -1,0 +1,8 @@
+simFuncDPLList = '(
+    (nil libName "NCSU_Devices_FreePDK45" cellName "PMOS_VTL"
+    viewName "functional" filePath "/home/ecelrc/students/hchae/vlsi_21/NCSU_Devices_FreePDK45/PMOS_VTL/functional/verilog.v"
+    ) 
+    (nil libName "NCSU_Devices_FreePDK45" cellName "NMOS_VTL"
+    viewName "functional" filePath "/home/ecelrc/students/hchae/vlsi_21/NCSU_Devices_FreePDK45/NMOS_VTL/functional/verilog.v"
+    )
+)

@@ -1,0 +1,23 @@
+// Library - fft, Cell - grey_cell, View - schematic
+// LAST TIME SAVED: Oct 19 20:53:17 2021
+// NETLIST TIME: Oct 23 13:56:20 2021
+`timescale 1ns / 1ns 
+
+module grey_cell ( g_i_j, g_i_k, cdsNet0, p_i_k );
+
+output  g_i_j;
+
+input  g_i_k, cdsNet0, p_i_k;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "grey_cell";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+NAND2X1 I1 ( g_i_j, net11, net10);
+NAND2X1 I0 ( net11, cdsNet0, p_i_k);
+INVX1 I2 ( net10, g_i_k);
+
+endmodule

@@ -1,0 +1,15 @@
+CADENCE IHNL111413
+
+lab2lib NAND2X1 schematic cds0
+lab2lib INVX1 schematic cds1
+fft and_16bit_1bit schematic cds2
+fft dot_array_gen schematic cds3
+fft xor schematic cds4
+fft half_adder schematic cds5
+fft full_adder schematic cds6
+fft start_logic_csa schematic cds7
+fft grey_cell schematic cds8
+fft mux2 schematic cds9
+lab2lib OR2X2 schematic cds10
+fft csk schematic cds11
+fft wallace_multi schematic cds12

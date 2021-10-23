@@ -1,0 +1,33 @@
+//
+// File created by:  ncxlmode
+// Do not modify this file
+//
+-XLMODE
+./INCA_libs/irun.lnx8664.15.20.nc
+-RUNMODE
+/home/ecelrc/students/amansoorshai/vlsi1-fft/csk_run1/testfixture.template
+/home/ecelrc/students/hchae/vlsi_21/NCSU_Devices_FreePDK45/PMOS_VTL/functional/verilog.v
+/home/ecelrc/students/hchae/vlsi_21/NCSU_Devices_FreePDK45/NMOS_VTL/functional/verilog.v
+ihnl/cds0/netlist
+ihnl/cds1/netlist
+ihnl/cds2/netlist
+ihnl/cds3/netlist
+ihnl/cds4/netlist
+ihnl/cds5/netlist
+ihnl/cds6/netlist
+ihnl/cds7/netlist
+hdlFilesDir/cds_globals.v
+-NOSTDOUT
+-NOCOPYRIGHT
+-neverwarn
+-nostdout
+-nocopyright
+-CDSLIB
+./INCA_libs/irun.lnx8664.15.20.nc/cdsrun.lib
+-HDLVAR
+./INCA_libs/irun.lnx8664.15.20.nc/hdlrun.var
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./INCA_libs/irun.lnx8664.15.20.nc/xllibs
+-ALLOWUNBOUND

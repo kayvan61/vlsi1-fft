@@ -1,0 +1,7 @@
+xor_ I1 ( sum, net13, cin);
+xor_ I0 ( net13, A, B);
+NAND2X1 I4 ( cout, net18, net17);
+NAND2X1 I3 ( net17, A, B);
+NAND2X1 I2 ( net18, cin, net13);
+
+endmodule

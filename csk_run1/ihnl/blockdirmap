@@ -1,0 +1,10 @@
+CADENCE IHNL11148
+
+lab2lib NAND2X1 schematic cds0
+lab2lib INVX1 schematic cds1
+fft xor schematic cds2
+fft start_logic_csa schematic cds3
+fft grey_cell schematic cds4
+fft mux2 schematic cds5
+lab2lib OR2X2 schematic cds6
+fft csk schematic cds7

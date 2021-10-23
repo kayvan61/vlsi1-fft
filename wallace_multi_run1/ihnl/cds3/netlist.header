@@ -1,0 +1,37 @@
+// Library - fft, Cell - dot_array_gen, View - schematic
+// LAST TIME SAVED: Oct 22 15:14:44 2021
+// NETLIST TIME: Oct 23 13:56:20 2021
+`timescale 1ns / 1ns 
+
+module dot_array_gen ( AB0, AB1, AB2, AB3, AB4, AB5, AB6, AB7, AB8,
+     AB9, AB10, AB11, AB12, AB13, AB14, AB15, A, B );
+
+
+
+output [15:0]  AB8;
+output [15:0]  AB6;
+output [15:0]  AB14;
+output [15:0]  AB13;
+output [15:0]  AB11;
+output [15:0]  AB10;
+output [15:0]  AB12;
+output [15:0]  AB5;
+output [15:0]  AB15;
+output [15:0]  AB9;
+output [15:0]  AB4;
+output [15:0]  AB3;
+output [15:0]  AB1;
+output [15:0]  AB0;
+output [15:0]  AB7;
+output [15:0]  AB2;
+
+input [15:0]  A;
+input [15:0]  B;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "dot_array_gen";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+

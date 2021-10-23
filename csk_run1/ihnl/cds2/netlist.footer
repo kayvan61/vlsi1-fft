@@ -1,0 +1,7 @@
+NAND2X1 I2 ( net8, A, net10);
+NAND2X1 I1 ( xor_out, net9, net8);
+NAND2X1 I0 ( net9, net07, B);
+INVX1 I6 ( net10, B);
+INVX1 I5 ( net07, A);
+
+endmodule

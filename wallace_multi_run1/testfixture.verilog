@@ -1,0 +1,41 @@
+`include "tasks.vh"
+// Verilog stimulus file.
+// Please do not create a module in this file.
+
+
+// Default verilog stimulus. 
+reg[0:15] i;
+reg[0:15] j;
+reg[31:0] expected;
+
+initial
+begin 
+   assign expected = i*j;
+
+   A[0:15] = 16'b0000000000000000;
+
+   B[0:15] = 16'b0000000000000000;
+
+#20
+   assert(z == 32'h00000000, "0x0");
+   A = 16'h0001;
+   B = 16'h0001;
+#20
+   assert(z == 32'h00000001, "1x1");
+#20
+   B = 16'h0001;
+   for (j = 16'h0; j < 16'hffff; j = j+1) begin
+      for (i = 16'h0; i < 16'hffff; i = i+1) begin
+          #20
+      	  A = i;
+	  B = j;
+	  #20
+  	  $display("A=", A, "  B=", B, "  z=", z);
+  	  $display("i=",i,"  j=",j,"  expected=", expected);
+       	  assert(z[31:0] == expected, "A*B");
+      end
+   end
+
+   endbench();
+
+end 

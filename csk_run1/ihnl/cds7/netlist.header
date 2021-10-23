@@ -1,0 +1,29 @@
+// Library - fft, Cell - csk, View - schematic
+// LAST TIME SAVED: Oct 23 13:39:55 2021
+// NETLIST TIME: Oct 23 15:09:41 2021
+`timescale 1ns / 1ns 
+
+module csk ( COUT_adder, S, A, B, CIN );
+
+output  COUT_adder;
+
+input  CIN;
+
+output [15:0]  S;
+
+input [15:0]  B;
+input [15:0]  A;
+
+// Buses in the design
+
+wire  [0:15]  P;
+
+wire  [1:15]  G;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "csk";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
