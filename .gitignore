@@ -1,3 +1,4 @@
 *.cdslck*
 *.log
 *~
+.cadence/
