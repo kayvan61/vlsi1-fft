@@ -1,0 +1,59 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : BufferflyUnit
+Version: K-2015.12
+Date   : Mon Nov 22 19:43:48 2021
+****************************************
+
+
+  Startpoint: X1[4] (input port clocked by vclk)
+  Endpoint: OUT0[7] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  input external delay                   0.0000     0.0000 r
+  X1[4] (in)                             0.0000     0.0000 r
+  I3/I11/Y (INVX1)                       0.0115     0.0115 f
+  I3/I18/Y (INVX1)                       0.1033     0.1148 r
+  I2/I0/I16/I11/Y (NAND2X1)              0.0384     0.1532 f
+  I2/I0/I16/I27/Y (INVX1)                0.0083     0.1615 r
+  I2/I48/I0/I0/Y (NAND2X1)               0.0125     0.1741 f
+  I2/I48/I0/I1/Y (NAND2X1)               0.0410     0.2151 r
+  I2/I48/I2/Y (NAND2X1)                  0.0230     0.2381 f
+  I2/I48/I4/Y (NAND2X1)                  0.0397     0.2778 r
+  I2/I140/I0/I5/Y (INVX1)                0.0255     0.3033 f
+  I2/I140/I0/I0/Y (NAND2X1)              0.0252     0.3286 r
+  I2/I140/I0/I1/Y (NAND2X1)              0.0228     0.3514 f
+  I2/I140/I1/I2/Y (NAND2X1)              0.0312     0.3826 r
+  I2/I140/I1/I1/Y (NAND2X1)              0.0253     0.4078 f
+  I2/I192/I0/I6/Y (INVX1)                0.0068     0.4146 r
+  I2/I192/I0/I2/Y (NAND2X1)              0.0126     0.4272 f
+  I2/I192/I0/I1/Y (NAND2X1)              0.0276     0.4548 r
+  I2/I192/I1/I2/Y (NAND2X1)              0.0205     0.4754 f
+  I2/I192/I1/I1/Y (NAND2X1)              0.0201     0.4955 r
+  I2/I229/I0/I0/Y (NAND2X1)              0.0240     0.5194 f
+  I2/I229/I0/I1/Y (NAND2X1)              0.0393     0.5588 r
+  I2/I266/I0/I0/Y (NAND2X1)              0.0236     0.5824 f
+  I2/I266/I0/I1/Y (NAND2X1)              0.0394     0.6218 r
+  I2/I290/I0/I0/Y (NAND2X1)              0.0236     0.6454 f
+  I2/I290/I0/I1/Y (NAND2X1)              0.0265     0.6719 r
+  I13/I9/Y (INVX1)                       0.0193     0.6913 f
+  I13/I25/Y (INVX1)                      0.0294     0.7207 r
+  I11/I10/I5/I0/Y (NAND2X1)              0.0173     0.7380 f
+  I11/I10/I5/I1/Y (NAND2X1)              0.0529     0.7909 r
+  I11/I26/I0/Y (NAND2X1)                 0.0278     0.8187 f
+  I11/I26/I1/Y (NAND2X1)                 0.0325     0.8512 r
+  I11/I42/I2/Y (INVX1)                   0.0238     0.8750 f
+  I11/I42/I1/Y (NAND2X1)                 0.0166     0.8916 r
+  I11/I74/I2/Y (NAND2X1)                 0.0187     0.9102 f
+  I11/I74/I1/Y (NAND2X1)                 0.0023     0.9125 r
+  OUT0[7] (out)                          0.0000     0.9125 r
+  data arrival time                                 0.9125
+  ---------------------------------------------------------------
+  (Path is unconstrained)
