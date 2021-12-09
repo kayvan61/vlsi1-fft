@@ -1,0 +1,9 @@
+set active_design ButterflyUnitW0
+read_verilog $active_design
+current_design $active_design
+link_design $active_design
+
+create_clock -name vclk -period 20 -waveform {0 10}
+set_input_delay 0 -clock vclk [all_inputs]
+
+report_timing -to [all_outputs] -significant_digits 4

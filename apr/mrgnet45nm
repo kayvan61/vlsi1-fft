@@ -1,0 +1,93 @@
+#!/usr/bin/perl
+
+#
+#         Spring 2002 VLSI I (EE 360R, EE382M)
+#         Author: Seokjin Lee (seokjin@cs.utexas.edu)
+#     
+
+# var initialization
+my $progname = $0;
+my $errors = 0;
+my ($arg, $run_dir, $outfile);
+my $usage = " Usage: $progname -rundir <run directory name> -out <output netlist name>\n";
+# parse the command line arguments.
+
+while ($arg = shift (@ARGV)) {
+  do { warn ($usage); exit(0)} if ($arg eq "-help");
+  if ($arg eq "-rundir") {
+    defined ($run_dir = shift (@ARGV)) || do { warn ("Missing argument after '$arg' switch.\n"); $errors=1};
+    next;
+  }
+  if ($arg eq "-out") {
+    defined ($outfile = shift (@ARGV)) || do { warn ("Missing argument after '$arg' switch.\n"); $errors=1};
+    next;
+  }
+  warn ("Unexpected argument: $arg\n");
+  $errors = 1;
+}
+$errors = 1 if (!defined($outfile));
+die ("$usage") if ($errors);
+
+$inputdir = $run_dir . "/" . "ihnl";
+opendir (CDS, $inputdir) || die "no cds directories. Possibly wrong specification for run directory.\n";
+
+unlink($outfile);
+
+while ($name = readdir(CDS)) {
+  if ($name =~ /^cds/) {
+    $errors = merge_netlist ($inputdir . "/" . $name, $outfile);
+    die("$Program abnormally terminated [error code = $errors].\n") if ($errors);
+  }
+}
+closedir(CDS);
+
+#
+# SUBROUTINES
+#
+sub merge_netlist {
+  my $ERROR_CODE = 2;
+  my ($curr_dir, $outfile) = @_;
+  local *NETFILE;
+  local *OUTPUTFILE;
+  $netlist = $curr_dir . "/" . "netlist";
+  $flag = 0;
+  $search1 = "cds_globals.gnd_";
+  $search2 = "cds_globals.vdd_";
+  $replace1 = "1\'b0";
+  $replace2 = "1\'b1";
+  open (NETFILE, "<$netlist") || do {warn("Failed to open '$netlist' for reading: $!\n"); return $ERROR_CODE};
+  open (OUTPUTFILE, ">>$outfile");
+  print OUTPUTFILE "\`timescale 1ns / 1ns\n";
+  while (<NETFILE>) {
+    next if /^\/\//;    # skip any lines starting with "//"
+    #chop;
+    if (!$flag) {
+      my ($starter, $module) = split;
+      next unless defined $starter;    # skip blank lines
+      if ($starter ne "module") {
+        next;
+      }
+      if (defined $starter && defined $module) {
+        if ($starter eq "module") {
+          if (($module eq "INVX1") || 
+	      ($module eq "INVX4")  ||
+              ($module eq "NAND2X1") ||
+	      ($module eq "OR2X2")) {
+            next;
+          }
+          else {
+            $flag = 1;
+          }
+        }
+      }
+
+    }
+    s/$search1/$replace1/g;
+    s/$search2/$replace2/g;
+    print OUTPUTFILE $_;
+  }
+  print OUTPUTFILE "\n\n";
+  close (NETFILE);
+  close (OUTPUTFILE);
+  return 0;
+}

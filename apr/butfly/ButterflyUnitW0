@@ -1,0 +1,1218 @@
+`timescale 1ns / 1ns
+
+
+`timescale 1ns / 1ns
+
+
+`timescale 1ns / 1ns
+module and_16bit_1bit ( OUT, A, B );
+
+
+input  B;
+
+output [15:0]  OUT;
+
+input [15:0]  A;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "and_16bit_1bit";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+NAND2X1 I15 ( .Y(net25), .A(A[0]), .B(B));
+NAND2X1 I14 ( .Y(net24), .A(A[1]), .B(B));
+NAND2X1 I13 ( .Y(net23), .A(A[2]), .B(B));
+NAND2X1 I12 ( .Y(net22), .A(A[3]), .B(B));
+NAND2X1 I11 ( .Y(net21), .A(A[4]), .B(B));
+NAND2X1 I10 ( .Y(net20), .A(A[5]), .B(B));
+NAND2X1 I9 ( .Y(net19), .A(A[6]), .B(B));
+NAND2X1 I8 ( .Y(net18), .A(A[7]), .B(B));
+NAND2X1 I7 ( .Y(net17), .A(A[8]), .B(B));
+NAND2X1 I6 ( .Y(net16), .A(A[9]), .B(B));
+NAND2X1 I5 ( .Y(net15), .A(A[10]), .B(B));
+NAND2X1 I4 ( .Y(net14), .A(A[11]), .B(B));
+NAND2X1 I3 ( .Y(net13), .A(A[12]), .B(B));
+NAND2X1 I2 ( .Y(net12), .A(A[13]), .B(B));
+NAND2X1 I1 ( .Y(net11), .A(A[14]), .B(B));
+NAND2X1 I0 ( .Y(net10), .A(A[15]), .B(B));
+INVX1 I31 ( .Y(OUT[0]), .A(net25));
+INVX1 I30 ( .Y(OUT[1]), .A(net24));
+INVX1 I29 ( .Y(OUT[2]), .A(net23));
+INVX1 I28 ( .Y(OUT[3]), .A(net22));
+INVX1 I27 ( .Y(OUT[4]), .A(net21));
+INVX1 I26 ( .Y(OUT[5]), .A(net20));
+INVX1 I25 ( .Y(OUT[6]), .A(net19));
+INVX1 I24 ( .Y(OUT[7]), .A(net18));
+INVX1 I23 ( .Y(OUT[8]), .A(net17));
+INVX1 I22 ( .Y(OUT[9]), .A(net16));
+INVX1 I21 ( .Y(OUT[10]), .A(net15));
+INVX1 I20 ( .Y(OUT[11]), .A(net14));
+INVX1 I19 ( .Y(OUT[12]), .A(net13));
+INVX1 I18 ( .Y(OUT[13]), .A(net12));
+INVX1 I17 ( .Y(OUT[14]), .A(net11));
+INVX1 I16 ( .Y(OUT[15]), .A(net10));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+module dot_array_gen ( AB0, AB1, AB2, AB3, AB4, AB5, AB6, AB7, AB8,
+     AB9, AB10, AB11, AB12, AB13, AB14, AB15, A, B );
+
+
+
+output [15:0]  AB8;
+output [15:0]  AB6;
+output [15:0]  AB14;
+output [15:0]  AB13;
+output [15:0]  AB11;
+output [15:0]  AB10;
+output [15:0]  AB12;
+output [15:0]  AB5;
+output [15:0]  AB15;
+output [15:0]  AB9;
+output [15:0]  AB4;
+output [15:0]  AB3;
+output [15:0]  AB1;
+output [15:0]  AB0;
+output [15:0]  AB7;
+output [15:0]  AB2;
+
+input [15:0]  A;
+input [15:0]  B;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "dot_array_gen";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+and_16bit_1bit I17 ( .OUT(AB0[15:0]), .A(A[15:0]), .B(B[0]));
+and_16bit_1bit I16 ( .OUT(AB1[15:0]), .A(A[15:0]), .B(B[1]));
+and_16bit_1bit I15 ( .OUT(AB2[15:0]), .A(A[15:0]), .B(B[2]));
+and_16bit_1bit I14 ( .OUT(AB3[15:0]), .A(A[15:0]), .B(B[3]));
+and_16bit_1bit I13 ( .OUT(AB4[15:0]), .A(A[15:0]), .B(B[4]));
+and_16bit_1bit I12 ( .OUT(AB5[15:0]), .A(A[15:0]), .B(B[5]));
+and_16bit_1bit I11 ( .OUT(AB6[15:0]), .A(A[15:0]), .B(B[6]));
+and_16bit_1bit I10 ( .OUT(AB7[15:0]), .A(A[15:0]), .B(B[7]));
+and_16bit_1bit I9 ( .OUT(AB8[15:0]), .A(A[15:0]), .B(B[8]));
+and_16bit_1bit I8 ( .OUT(AB9[15:0]), .A(A[15:0]), .B(B[9]));
+and_16bit_1bit I7 ( .OUT(AB10[15:0]), .A(A[15:0]), .B(B[10]));
+and_16bit_1bit I6 ( .OUT(AB11[15:0]), .A(A[15:0]), .B(B[11]));
+and_16bit_1bit I5 ( .OUT(AB12[15:0]), .A(A[15:0]), .B(B[12]));
+and_16bit_1bit I4 ( .OUT(AB13[15:0]), .A(A[15:0]), .B(B[13]));
+and_16bit_1bit I3 ( .OUT(AB14[15:0]), .A(A[15:0]), .B(B[14]));
+and_16bit_1bit I2 ( .OUT(AB15[15:0]), .A(A[15:0]), .B(B[15]));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+module xor_ ( xor_out, A, B );
+
+output  xor_out;
+
+input  A, B;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "xor";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+NAND2X1 I2 ( .Y(net8), .A(A), .B(net10));
+NAND2X1 I1 ( .Y(xor_out), .A(net9), .B(net8));
+NAND2X1 I0 ( .Y(net9), .A(net07), .B(B));
+INVX1 I6 ( .Y(net10), .A(B));
+INVX1 I5 ( .Y(net07), .A(A));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+module half_adder ( cout, sum, A, B );
+
+output  cout, sum;
+
+input  A, B;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "half_adder";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+xor_ I0 ( .xor_out(sum), .A(A), .B(B));
+NAND2X1 I1 ( .Y(net12), .A(B), .B(A));
+INVX1 I2 ( .Y(cout), .A(net12));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+module full_adder ( cout, sum, A, B, cin );
+
+output  cout, sum;
+
+input  A, B, cin;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "full_adder";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+xor_ I1 ( .xor_out(sum), .A(net13), .B(cin));
+xor_ I0 ( .xor_out(net13), .A(A), .B(B));
+NAND2X1 I4 ( .Y(cout), .A(net18), .B(net17));
+NAND2X1 I3 ( .Y(net17), .A(A), .B(B));
+NAND2X1 I2 ( .Y(net18), .A(cin), .B(net13));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+module start_logic_csa ( g_out, p_out, a_bit, b_bit );
+
+output  g_out, p_out;
+
+input  a_bit, b_bit;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "start_logic_csa";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+xor_ I5 ( .xor_out(p_out), .A(a_bit), .B(b_bit));
+NAND2X1 I6 ( .Y(net10), .A(a_bit), .B(b_bit));
+INVX1 I7 ( .Y(g_out), .A(net10));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+module grey_cell ( g_i_j, g_i_k, .cdsTerm1(cdsNet0), p_i_k );
+
+output  g_i_j;
+
+input  g_i_k, cdsNet0, p_i_k;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "grey_cell";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+NAND2X1 I1 ( .Y(g_i_j), .A(net11), .B(net10));
+NAND2X1 I0 ( .Y(net11), .A(cdsNet0), .B(p_i_k));
+INVX1 I2 ( .Y(net10), .A(g_i_k));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+module mux2 ( mux_out, A, B, S );
+
+output  mux_out;
+
+input  A, B, S;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "mux2";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+INVX1 I0 ( .Y(net12), .A(S));
+NAND2X1 I3 ( .Y(mux_out), .A(net11), .B(net10));
+NAND2X1 I2 ( .Y(net10), .A(B), .B(net12));
+NAND2X1 I1 ( .Y(net11), .A(A), .B(S));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+
+
+`timescale 1ns / 1ns
+module csk ( COUT_adder, S, A, B, CIN );
+
+output  COUT_adder;
+
+input  CIN;
+
+output [15:0]  S;
+
+input [15:0]  B;
+input [15:0]  A;
+
+
+wire  [0:15]  P;
+
+wire  [1:15]  G;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "csk";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+start_logic_csa I16 ( .g_out(net6), .p_out(P[0]), .a_bit(A[0]),
+     .b_bit(B[0]));
+start_logic_csa I15 ( .g_out(net7), .p_out(P[1]), .a_bit(A[1]),
+     .b_bit(B[1]));
+start_logic_csa I14 ( .g_out(net0121), .p_out(P[2]), .a_bit(A[2]),
+     .b_bit(B[2]));
+start_logic_csa I13 ( .g_out(net11), .p_out(P[3]), .a_bit(A[3]),
+     .b_bit(B[3]));
+start_logic_csa I12 ( .g_out(net13), .p_out(P[4]), .a_bit(A[4]),
+     .b_bit(B[4]));
+start_logic_csa I11 ( .g_out(net15), .p_out(P[5]), .a_bit(A[5]),
+     .b_bit(B[5]));
+start_logic_csa I10 ( .g_out(net17), .p_out(P[6]), .a_bit(A[6]),
+     .b_bit(B[6]));
+start_logic_csa I9 ( .g_out(net19), .p_out(P[7]), .a_bit(A[7]),
+     .b_bit(B[7]));
+start_logic_csa I8 ( .g_out(net21), .p_out(P[8]), .a_bit(A[8]),
+     .b_bit(B[8]));
+start_logic_csa I7 ( .g_out(net23), .p_out(P[9]), .a_bit(A[9]),
+     .b_bit(B[9]));
+start_logic_csa I6 ( .g_out(net25), .p_out(P[10]), .a_bit(A[10]),
+     .b_bit(B[10]));
+start_logic_csa I5 ( .g_out(net27), .p_out(P[11]), .a_bit(A[11]),
+     .b_bit(B[11]));
+start_logic_csa I4 ( .g_out(net29), .p_out(P[12]), .a_bit(A[12]),
+     .b_bit(B[12]));
+start_logic_csa I3 ( .g_out(net31), .p_out(P[13]), .a_bit(A[13]),
+     .b_bit(B[13]));
+start_logic_csa I2 ( .g_out(net33), .p_out(P[14]), .a_bit(A[14]),
+     .b_bit(B[14]));
+start_logic_csa I1 ( .g_out(net35), .p_out(P[15]), .a_bit(A[15]),
+     .b_bit(B[15]));
+grey_cell I60 ( .g_i_j(G[15]), .g_i_k(net09), .cdsTerm1(G[14]),
+     .p_i_k(P[14]));
+grey_cell I59 ( .g_i_j(G[14]), .g_i_k(net012), .cdsTerm1(G[13]),
+     .p_i_k(P[13]));
+grey_cell I58 ( .g_i_j(G[13]), .g_i_k(net29), .cdsTerm1(G[12]),
+     .p_i_k(P[12]));
+grey_cell I52 ( .g_i_j(G[11]), .g_i_k(net017), .cdsTerm1(G[10]),
+     .p_i_k(P[10]));
+grey_cell I51 ( .g_i_j(G[10]), .g_i_k(net020), .cdsTerm1(G[9]),
+     .p_i_k(P[9]));
+grey_cell I48 ( .g_i_j(G[9]), .g_i_k(net21), .cdsTerm1(G[8]),
+     .p_i_k(P[8]));
+grey_cell I42 ( .g_i_j(G[7]), .g_i_k(net025), .cdsTerm1(G[6]),
+     .p_i_k(P[6]));
+grey_cell I41 ( .g_i_j(G[6]), .g_i_k(net0125), .cdsTerm1(G[5]),
+     .p_i_k(P[5]));
+grey_cell I40 ( .g_i_j(G[5]), .g_i_k(net13), .cdsTerm1(G[4]),
+     .p_i_k(P[4]));
+grey_cell I33 ( .g_i_j(G[3]), .g_i_k(net033), .cdsTerm1(G[2]),
+     .p_i_k(P[2]));
+grey_cell I32 ( .g_i_j(net052), .g_i_k(net11), .cdsTerm1(net033),
+     .p_i_k(P[3]));
+grey_cell I31 ( .g_i_j(net053), .g_i_k(net19), .cdsTerm1(net025),
+     .p_i_k(P[7]));
+grey_cell I30 ( .g_i_j(net054), .g_i_k(net27), .cdsTerm1(net017),
+     .p_i_k(P[11]));
+grey_cell I29 ( .g_i_j(net055), .g_i_k(net35), .cdsTerm1(net09),
+     .p_i_k(P[15]));
+grey_cell I28 ( .g_i_j(net09), .g_i_k(net33), .cdsTerm1(net012),
+     .p_i_k(P[14]));
+grey_cell I27 ( .g_i_j(net017), .g_i_k(net25), .cdsTerm1(net020),
+     .p_i_k(P[10]));
+grey_cell I26 ( .g_i_j(net025), .g_i_k(net17), .cdsTerm1(net0125),
+     .p_i_k(P[6]));
+grey_cell I25 ( .g_i_j(net033), .g_i_k(net0121), .cdsTerm1(net38),
+     .p_i_k(P[2]));
+grey_cell I24 ( .g_i_j(G[2]), .g_i_k(net38), .cdsTerm1(G[1]),
+     .p_i_k(P[1]));
+grey_cell I23 ( .g_i_j(net012), .g_i_k(net31), .cdsTerm1(net29),
+     .p_i_k(P[13]));
+grey_cell I22 ( .g_i_j(net020), .g_i_k(net23), .cdsTerm1(net21),
+     .p_i_k(P[9]));
+grey_cell I20 ( .g_i_j(G[1]), .g_i_k(net6), .cdsTerm1(CIN),
+     .p_i_k(P[0]));
+grey_cell I21 ( .g_i_j(net0125), .g_i_k(net15), .cdsTerm1(net13),
+     .p_i_k(P[5]));
+grey_cell I17 ( .g_i_j(net38), .g_i_k(net7), .cdsTerm1(net6),
+     .p_i_k(P[1]));
+mux2 I61 ( .mux_out(COUT), .A(G[12]), .B(net055), .S(net0117));
+mux2 I53 ( .mux_out(G[12]), .A(G[8]), .B(net054), .S(net0107));
+mux2 I43 ( .mux_out(G[8]), .A(G[4]), .B(net053), .S(net076));
+mux2 I34 ( .mux_out(G[4]), .A(CIN), .B(net052), .S(net047));
+NAND2X1 I84 ( .Y(net037), .A(G[15]), .B(P[15]));
+NAND2X1 I82 ( .Y(COUT_adder), .A(net0115), .B(net037));
+NAND2X1 I63 ( .Y(net0132), .A(P[12]), .B(P[13]));
+NAND2X1 I62 ( .Y(net0126), .A(P[14]), .B(P[15]));
+NAND2X1 I55 ( .Y(net039), .A(P[8]), .B(P[9]));
+NAND2X1 I54 ( .Y(net036), .A(P[10]), .B(P[11]));
+NAND2X1 I45 ( .Y(net032), .A(P[4]), .B(P[5]));
+NAND2X1 I44 ( .Y(net031), .A(P[6]), .B(P[7]));
+NAND2X1 I36 ( .Y(net045), .A(P[2]), .B(P[3]));
+NAND2X1 I35 ( .Y(net048), .A(P[0]), .B(P[1]));
+OR2X2 I64 ( .Y(net0105), .A(net0132), .B(net0126));
+OR2X2 I56 ( .Y(net088), .A(net039), .B(net036));
+OR2X2 I46 ( .Y(net063), .A(net032), .B(net031));
+OR2X2 I38 ( .Y(net065), .A(net048), .B(net045));
+INVX1 I83 ( .Y(net0115), .A(COUT));
+INVX1 I65 ( .Y(net0117), .A(net0105));
+INVX1 I57 ( .Y(net0107), .A(net088));
+INVX1 I47 ( .Y(net076), .A(net063));
+INVX1 I39 ( .Y(net047), .A(net065));
+xor_ I81 ( .xor_out(S[0]), .A(CIN), .B(P[0]));
+xor_ I80 ( .xor_out(S[1]), .A(G[1]), .B(P[1]));
+xor_ I79 ( .xor_out(S[2]), .A(G[2]), .B(P[2]));
+xor_ I78 ( .xor_out(S[3]), .A(G[3]), .B(P[3]));
+xor_ I77 ( .xor_out(S[4]), .A(G[4]), .B(P[4]));
+xor_ I76 ( .xor_out(S[5]), .A(G[5]), .B(P[5]));
+xor_ I75 ( .xor_out(S[6]), .A(G[6]), .B(P[6]));
+xor_ I74 ( .xor_out(S[7]), .A(G[7]), .B(P[7]));
+xor_ I73 ( .xor_out(S[8]), .A(G[8]), .B(P[8]));
+xor_ I72 ( .xor_out(S[9]), .A(G[9]), .B(P[9]));
+xor_ I71 ( .xor_out(S[10]), .A(G[10]), .B(P[10]));
+xor_ I70 ( .xor_out(S[11]), .A(G[11]), .B(P[11]));
+xor_ I69 ( .xor_out(S[12]), .A(G[12]), .B(P[12]));
+xor_ I68 ( .xor_out(S[13]), .A(G[13]), .B(P[13]));
+xor_ I67 ( .xor_out(S[14]), .A(G[14]), .B(P[14]));
+xor_ I66 ( .xor_out(S[15]), .A(G[15]), .B(P[15]));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+module wallace_multi ( z, A, B );
+
+
+
+output [22:0]  z;
+
+input [0:15]  B;
+input [0:15]  A;
+
+
+wire  [0:23]  sumA;
+
+wire  [0:23]  sumB;
+
+wire  [15:0]  AB15;
+
+wire  [15:0]  AB14;
+
+wire  [15:0]  AB13;
+
+wire  [15:0]  AB12;
+
+wire  [15:0]  AB11;
+
+wire  [15:0]  AB10;
+
+wire  [15:0]  AB9;
+
+wire  [15:0]  AB5;
+
+wire  [15:0]  AB4;
+
+wire  [15:0]  AB3;
+
+wire  [15:0]  AB2;
+
+wire  [15:0]  AB1;
+
+wire  [15:0]  AB8;
+
+wire  [15:0]  AB7;
+
+wire  [15:0]  AB0;
+
+wire  [15:0]  AB6;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "wallace_multi";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+dot_array_gen I0 ( .AB0(AB0[15:0]), .AB1(AB1[15:0]), .AB2(AB2[15:0]),
+     .AB3(AB3[15:0]), .AB4(AB4[15:0]), .AB5(AB5[15:0]),
+     .AB6(AB6[15:0]), .AB7(AB7[15:0]), .AB8(AB8[15:0]),
+     .AB9(AB9[15:0]), .AB10(AB10[15:0]), .AB11(AB11[15:0]),
+     .AB12(AB12[15:0]), .AB13(AB13[15:0]), .AB14(AB14[15:0]),
+     .AB15(AB15[15:0]), .A(A[0:15]), .B(B[0:15]));
+half_adder I301 ( .cout(cout_bit_1), .sum(sumA[23]), .A(AB15[15]),
+     .B(net0384));
+half_adder I298 ( .cout(sumB[8]), .sum(sumA[7]), .A(net0491),
+     .B(net0490));
+half_adder I297 ( .cout(sumB[7]), .sum(sumA[6]), .A(net0690),
+     .B(net0492));
+half_adder I296 ( .cout(sumB[6]), .sum(sumA[5]), .A(net0495),
+     .B(net0494));
+half_adder I295 ( .cout(sumB[5]), .sum(sumA[4]), .A(net0497),
+     .B(net0496));
+half_adder I294 ( .cout(sumB[4]), .sum(sumA[3]), .A(net0459),
+     .B(net0498));
+half_adder I293 ( .cout(sumB[3]), .sum(sumA[2]), .A(net0689),
+     .B(net0460));
+half_adder I292 ( .cout(sumB[2]), .sum(sumA[1]), .A(net0463),
+     .B(net0462));
+half_adder I291 ( .cout(sumB[1]), .sum(sumA[0]), .A(net0668),
+     .B(net0625));
+half_adder I290 ( .cout(sumB[0]), .sum(z[6]), .A(net0617),
+     .B(net0466));
+half_adder I288 ( .cout(net0451), .sum(net0693), .A(net0219),
+     .B(net0590));
+half_adder I287 ( .cout(net0453), .sum(net0454), .A(net0524),
+     .B(net0389));
+half_adder I286 ( .cout(net0679), .sum(net0456), .A(net0506),
+     .B(net0391));
+half_adder I285 ( .cout(net0667), .sum(net0458), .A(net0455),
+     .B(net0393));
+half_adder I269 ( .cout(net0459), .sum(net0460), .A(net0595),
+     .B(net0433));
+half_adder I268 ( .cout(net0689), .sum(net0462), .A(net0442),
+     .B(net0441));
+half_adder I267 ( .cout(net0463), .sum(net0625), .A(net0378),
+     .B(net0513));
+half_adder I266 ( .cout(net0668), .sum(net0466), .A(net0380),
+     .B(net0379));
+half_adder I265 ( .cout(net0617), .sum(z[5]), .A(net0382),
+     .B(net0381));
+half_adder I256 ( .cout(net0372), .sum(net0373), .A(net0279),
+     .B(net0468));
+half_adder I255 ( .cout(net0374), .sum(net0375), .A(net0478),
+     .B(net0368));
+half_adder I239 ( .cout(net0376), .sum(net0377), .A(net0311),
+     .B(net0155));
+half_adder I229 ( .cout(net0378), .sum(net0379), .A(net0428),
+     .B(net0330));
+half_adder I228 ( .cout(net0380), .sum(net0381), .A(net0474),
+     .B(net0332));
+half_adder I227 ( .cout(net0382), .sum(z[4]), .A(net0469),
+     .B(net0436));
+half_adder I226 ( .cout(net0525), .sum(net0524), .A(net0246),
+     .B(net0333));
+half_adder I225 ( .cout(net0415), .sum(net0506), .A(net0335),
+     .B(net0395));
+half_adder I224 ( .cout(net0516), .sum(net0455), .A(net0337),
+     .B(net0440));
+half_adder I219 ( .cout(net0264), .sum(net0265), .A(net0709),
+     .B(net0169));
+half_adder I217 ( .cout(net0452), .sum(net0467), .A(net0329),
+     .B(net0181));
+half_adder I200 ( .cout(net0268), .sum(net0387), .A(net0352),
+     .B(net0148));
+half_adder I198 ( .cout(net0270), .sum(net0271), .A(net0222),
+     .B(net016));
+half_adder I196 ( .cout(net0272), .sum(net0409), .A(net0266),
+     .B(AB9[0]));
+half_adder I190 ( .cout(net0474), .sum(net0436), .A(net0336),
+     .B(net0281));
+half_adder I189 ( .cout(net0469), .sum(z[3]), .A(net0258),
+     .B(net0280));
+half_adder I184 ( .cout(net0350), .sum(net0279), .A(net066),
+     .B(net0226));
+half_adder I182 ( .cout(net0471), .sum(net0368), .A(net0238),
+     .B(net0220));
+half_adder I180 ( .cout(net0292), .sum(net0309), .A(net0164),
+     .B(net0214));
+half_adder I152 ( .cout(net0284), .sum(net0148), .A(net015),
+     .B(net075));
+half_adder I143 ( .cout(net0344), .sum(net0319), .A(net030),
+     .B(net045));
+half_adder I141 ( .cout(net0361), .sum(net0356), .A(net034),
+     .B(AB6[0]));
+half_adder I136 ( .cout(net0258), .sum(z[2]), .A(net25), .B(net27));
+half_adder I135 ( .cout(net0252), .sum(net0219), .A(net05),
+     .B(AB14[14]));
+half_adder I130 ( .cout(net021), .sum(net0254), .A(net0681),
+     .B(AB11[14]));
+half_adder I122 ( .cout(net0226), .sum(net0220), .A(net0678),
+     .B(AB8[14]));
+half_adder I111 ( .cout(net0172), .sum(net0181), .A(net0510),
+     .B(AB5[14]));
+half_adder I80 ( .cout(net0155), .sum(net0143), .A(AB12[1]),
+     .B(AB13[0]));
+half_adder I66 ( .cout(net015), .sum(net016), .A(AB9[1]), .B(AB10[0]));
+half_adder I55 ( .cout(net047), .sum(net045), .A(AB6[1]), .B(AB7[0]));
+half_adder I47 ( .cout(net046), .sum(net044), .A(AB3[1]), .B(AB4[0]));
+half_adder I41 ( .cout(net25), .sum(z[1]), .A(AB0[1]), .B(AB1[0]));
+full_adder I314 ( .cout(sumB[11]), .sum(sumA[10]), .A(net0485),
+     .B(net0484), .cin(net0600));
+full_adder I313 ( .cout(sumB[12]), .sum(sumA[11]), .A(net0483),
+     .B(net0482), .cin(net0416));
+full_adder I312 ( .cout(sumB[13]), .sum(sumA[12]), .A(net0481),
+     .B(net0480), .cin(net0412));
+full_adder I311 ( .cout(sumB[14]), .sum(sumA[13]), .A(net0479),
+     .B(net0634), .cin(net0408));
+full_adder I310 ( .cout(sumB[15]), .sum(sumA[14]), .A(net0636),
+     .B(net0476), .cin(net0404));
+full_adder I309 ( .cout(sumB[16]), .sum(sumA[15]), .A(net0641),
+     .B(net0530), .cin(net0400));
+full_adder I308 ( .cout(sumB[17]), .sum(sumA[16]), .A(net0473),
+     .B(net0694), .cin(net0398));
+full_adder I307 ( .cout(sumB[18]), .sum(sumA[17]), .A(net0560),
+     .B(net0470), .cin(net0396));
+full_adder I306 ( .cout(sumB[19]), .sum(sumA[18]), .A(net0521),
+     .B(net0458), .cin(net0394));
+full_adder I305 ( .cout(sumB[20]), .sum(sumA[19]), .A(net0667),
+     .B(net0456), .cin(net0392));
+full_adder I304 ( .cout(sumB[21]), .sum(sumA[20]), .A(net0679),
+     .B(net0454), .cin(net0390));
+full_adder I303 ( .cout(sumB[22]), .sum(sumA[21]), .A(net0453),
+     .B(net0693), .cin(net0388));
+full_adder I302 ( .cout(sumB[23]), .sum(sumA[22]), .A(net0451),
+     .B(net0554), .cin(net0386));
+full_adder I300 ( .cout(sumB[10]), .sum(sumA[9]), .A(net0487),
+     .B(net0486), .cin(net0583));
+full_adder I299 ( .cout(sumB[9]), .sum(sumA[8]), .A(net0489),
+     .B(net0488), .cin(net0376));
+full_adder I284 ( .cout(net0521), .sum(net0470), .A(net0508),
+     .B(net0372), .cin(net0598));
+full_adder I283 ( .cout(net0560), .sum(net0694), .A(net0374),
+     .B(net0373), .cin(net0397));
+full_adder I282 ( .cout(net0473), .sum(net0530), .A(net0402),
+     .B(net0375), .cin(net0399));
+full_adder I281 ( .cout(net0641), .sum(net0476), .A(net0406),
+     .B(net0403), .cin(net0401));
+full_adder I280 ( .cout(net0636), .sum(net0634), .A(net0410),
+     .B(net0407), .cin(net0405));
+full_adder I279 ( .cout(net0479), .sum(net0480), .A(net0543),
+     .B(net0411), .cin(net0588));
+full_adder I278 ( .cout(net0481), .sum(net0482), .A(net0418),
+     .B(net0477), .cin(net0413));
+full_adder I277 ( .cout(net0483), .sum(net0484), .A(net0422),
+     .B(net0419), .cin(net0417));
+full_adder I276 ( .cout(net0485), .sum(net0486), .A(net0464),
+     .B(net0423), .cin(net0421));
+full_adder I275 ( .cout(net0487), .sum(net0488), .A(net0529),
+     .B(net0427), .cin(net0425));
+full_adder I274 ( .cout(net0489), .sum(net0490), .A(net0430),
+     .B(net0429), .cin(net0377));
+full_adder I273 ( .cout(net0491), .sum(net0492), .A(net0570),
+     .B(net0431), .cin(net0315));
+full_adder I272 ( .cout(net0690), .sum(net0494), .A(net0597),
+     .B(net0435), .cin(net0268));
+full_adder I271 ( .cout(net0495), .sum(net0496), .A(net0438),
+     .B(net0509), .cin(net0270));
+full_adder I270 ( .cout(net0497), .sum(net0498), .A(net0432),
+     .B(net0439), .cin(net0272));
+full_adder I264 ( .cout(net0384), .sum(net0554), .A(net0563),
+     .B(net0252), .cin(net07));
+full_adder I263 ( .cout(net0386), .sum(net0590), .A(net0525),
+     .B(net0255), .cin(net0549));
+full_adder I262 ( .cout(net0388), .sum(net0389), .A(net0415),
+     .B(net0251), .cin(net0688));
+full_adder I261 ( .cout(net0390), .sum(net0391), .A(net0516),
+     .B(net0230), .cin(net08));
+full_adder I259 ( .cout(net0394), .sum(net0598), .A(net0518),
+     .B(net0231), .cin(net0734));
+full_adder I260 ( .cout(net0392), .sum(net0393), .A(net0493),
+     .B(net0183), .cin(net0654));
+full_adder I257 ( .cout(net0396), .sum(net0397), .A(net0523),
+     .B(net0256), .cin(net011));
+full_adder I254 ( .cout(net0398), .sum(net0399), .A(net0507),
+     .B(net0239), .cin(net0611));
+full_adder I253 ( .cout(net0400), .sum(net0401), .A(net0360),
+     .B(net0211), .cin(net0624));
+full_adder I252 ( .cout(net0402), .sum(net0403), .A(net0309),
+     .B(net0264), .cin(net0526));
+full_adder I251 ( .cout(net0404), .sum(net0405), .A(net0461),
+     .B(net0199), .cin(net0657));
+full_adder I250 ( .cout(net0406), .sum(net0407), .A(net0452),
+     .B(net0265), .cin(net0285));
+full_adder I249 ( .cout(net0408), .sum(net0588), .A(net0291),
+     .B(net0170), .cin(net0711));
+full_adder I248 ( .cout(net0410), .sum(net0411), .A(net0434),
+     .B(net0467), .cin(net0450));
+full_adder I247 ( .cout(net0412), .sum(net0413), .A(net0457),
+     .B(net0158), .cin(net0722));
+full_adder I246 ( .cout(net0543), .sum(net0477), .A(net0424),
+     .B(net0294), .cin(net0629));
+full_adder I245 ( .cout(net0416), .sum(net0417), .A(net0299),
+     .B(net0147), .cin(net0167));
+full_adder I244 ( .cout(net0418), .sum(net0419), .A(net0301),
+     .B(net0298), .cin(net0296));
+full_adder I243 ( .cout(net0600), .sum(net0421), .A(net0303),
+     .B(net0134), .cin(net0744));
+full_adder I242 ( .cout(net0422), .sum(net0423), .A(net0305),
+     .B(net0302), .cin(net0626));
+full_adder I241 ( .cout(net0583), .sum(net0425), .A(net0364),
+     .B(net0123), .cin(net0687));
+full_adder I240 ( .cout(net0464), .sum(net0427), .A(net0414),
+     .B(net0306), .cin(net0304));
+full_adder I238 ( .cout(net0529), .sum(net0429), .A(net0313),
+     .B(net0310), .cin(net0308));
+full_adder I237 ( .cout(net0430), .sum(net0431), .A(net0437),
+     .B(net0314), .cin(net0312));
+full_adder I235 ( .cout(net0570), .sum(net0435), .A(net0475),
+     .B(net0318), .cin(net0472));
+full_adder I234 ( .cout(net0597), .sum(net0509), .A(net0321),
+     .B(net0358), .cin(net0387));
+full_adder I233 ( .cout(net0438), .sum(net0439), .A(net0465),
+     .B(net0426), .cin(net0271));
+full_adder I236 ( .cout(net0432), .sum(net0433), .A(net0443),
+     .B(net0324), .cin(net0409));
+full_adder I231 ( .cout(net0595), .sum(net0441), .A(net0385),
+     .B(net0326), .cin(net0344));
+full_adder I230 ( .cout(net0442), .sum(net0513), .A(net0383),
+     .B(net0328), .cin(net0361));
+full_adder I223 ( .cout(net0493), .sum(net0508), .A(net0350),
+     .B(net0447), .cin(net0338));
+full_adder I222 ( .cout(net0518), .sum(net0468), .A(net0341),
+     .B(net0471), .cin(net0340));
+full_adder I221 ( .cout(net0523), .sum(net0478), .A(net0292),
+     .B(net0317), .cin(net0342));
+full_adder I220 ( .cout(net0507), .sum(net0526), .A(net0346),
+     .B(net0363), .cin(net0162));
+full_adder I218 ( .cout(net0360), .sum(net0285), .A(net0286),
+     .B(net0345), .cin(net0420));
+full_adder I216 ( .cout(net0461), .sum(net0450), .A(net0174),
+     .B(net0357), .cin(net0171));
+full_adder I214 ( .cout(net0291), .sum(net0629), .A(net0180),
+     .B(net0269), .cin(net0273));
+full_adder I213 ( .cout(net0434), .sum(net0294), .A(net0173),
+     .B(net0182), .cin(net0327));
+full_adder I212 ( .cout(net0457), .sum(net0296), .A(net0186),
+     .B(net0179), .cin(net0307));
+full_adder I211 ( .cout(net0424), .sum(net0298), .A(net0188),
+     .B(net0339), .cin(net0290));
+full_adder I210 ( .cout(net0299), .sum(net0626), .A(net0316),
+     .B(net0185), .cin(net0194));
+full_adder I209 ( .cout(net0301), .sum(net0302), .A(net0325),
+     .B(net0274), .cin(net0343));
+full_adder I208 ( .cout(net0303), .sum(net0304), .A(net0198),
+     .B(net0276), .cin(net0359));
+full_adder I207 ( .cout(net0305), .sum(net0306), .A(net0200),
+     .B(net0278), .cin(net0193));
+full_adder I206 ( .cout(net0364), .sum(net0308), .A(net0204),
+     .B(net0297), .cin(net0202));
+full_adder I205 ( .cout(net0414), .sum(net0310), .A(net0206),
+     .B(net0201), .cin(net0348));
+full_adder I204 ( .cout(net0311), .sum(net0312), .A(net0275),
+     .B(net0295), .cin(net0334));
+full_adder I203 ( .cout(net0313), .sum(net0314), .A(net0320),
+     .B(net0207), .cin(net0362));
+full_adder I202 ( .cout(net0315), .sum(net0472), .A(net0216),
+     .B(net0209), .cin(net0284));
+full_adder I201 ( .cout(net0437), .sum(net0318), .A(net0323),
+     .B(net0213), .cin(net0267));
+full_adder I199 ( .cout(net0475), .sum(net0358), .A(net0282),
+     .B(net0215), .cin(net0349));
+full_adder I197 ( .cout(net0321), .sum(net0426), .A(net0224),
+     .B(net0221), .cin(net0331));
+full_adder I195 ( .cout(net0465), .sum(net0324), .A(net0228),
+     .B(net0225), .cin(net0223));
+full_adder I194 ( .cout(net0443), .sum(net0326), .A(net0287),
+     .B(net0229), .cin(net0322));
+full_adder I193 ( .cout(net0385), .sum(net0328), .A(net0232),
+     .B(net0354), .cin(net0319));
+full_adder I192 ( .cout(net0383), .sum(net0330), .A(net0293),
+     .B(net0288), .cin(net0356));
+full_adder I191 ( .cout(net0428), .sum(net0332), .A(net0353),
+     .B(net0235), .cin(net046));
+full_adder I188 ( .cout(net0333), .sum(net0395), .A(net0627),
+     .B(net021), .cin(net0217));
+full_adder I187 ( .cout(net0335), .sum(net0440), .A(net0227),
+     .B(net0254), .cin(net0205));
+full_adder I186 ( .cout(net0337), .sum(net0338), .A(net0257),
+     .B(net0240), .cin(net0248));
+full_adder I185 ( .cout(net0447), .sum(net0340), .A(net0218),
+     .B(net0233), .cin(net0234));
+full_adder I183 ( .cout(net0341), .sum(net0342), .A(net0249),
+     .B(net0237), .cin(net0244));
+full_adder I181 ( .cout(net0317), .sum(net0162), .A(net0163),
+     .B(net0351), .cin(net0165));
+full_adder I179 ( .cout(net0363), .sum(net0420), .A(net0192),
+     .B(net0210), .cin(net0203));
+full_adder I178 ( .cout(net0346), .sum(net0169), .A(net0172),
+     .B(net0212), .cin(net0159));
+full_adder I177 ( .cout(net0345), .sum(net0171), .A(net0178),
+     .B(net0195), .cin(net0166));
+full_adder I176 ( .cout(net0286), .sum(net0329), .A(net0168),
+     .B(net0161), .cin(net0190));
+full_adder I174 ( .cout(net0174), .sum(net0269), .A(net0176),
+     .B(net0196), .cin(net0189));
+full_adder I173 ( .cout(net0357), .sum(net0327), .A(net0177),
+     .B(net0191), .cin(net0184));
+full_adder I172 ( .cout(net0273), .sum(net0179), .A(net0157),
+     .B(net0139), .cin(net0144));
+full_adder I171 ( .cout(net0180), .sum(net0290), .A(net0125),
+     .B(net0175), .cin(net0152));
+full_adder I170 ( .cout(net0182), .sum(net0339), .A(net0110),
+     .B(net0117), .cin(net0197));
+full_adder I169 ( .cout(net0307), .sum(net0185), .A(net0142),
+     .B(net0130), .cin(net0136));
+full_adder I168 ( .cout(net0186), .sum(net0343), .A(net0132),
+     .B(net0116), .cin(net0149));
+full_adder I167 ( .cout(net0188), .sum(net0274), .A(net0126),
+     .B(net0145), .cin(net0128));
+full_adder I166 ( .cout(net0325), .sum(net0278), .A(net052),
+     .B(net0118), .cin(net0137));
+full_adder I165 ( .cout(net0316), .sum(net0193), .A(net0140),
+     .B(net0151), .cin(net0141));
+full_adder I164 ( .cout(net0194), .sum(net0276), .A(net0146),
+     .B(net0154), .cin(net0150));
+full_adder I162 ( .cout(net0359), .sum(net0297), .A(net054),
+     .B(net0138), .cin(net0115));
+full_adder I161 ( .cout(net0198), .sum(net0348), .A(net058),
+     .B(net0156), .cin(net056));
+full_adder I160 ( .cout(net0200), .sum(net0201), .A(net060),
+     .B(net053), .cin(net0153));
+full_adder I159 ( .cout(net0202), .sum(net0295), .A(net091),
+     .B(net055), .cin(net0143));
+full_adder I158 ( .cout(net0204), .sum(net0362), .A(net088),
+     .B(net057), .cin(net076));
+full_adder I157 ( .cout(net0206), .sum(net0207), .A(net093),
+     .B(net061), .cin(net059));
+full_adder I156 ( .cout(net0334), .sum(net0209), .A(net090),
+     .B(net083), .cin(AB12[0]));
+full_adder I155 ( .cout(net0275), .sum(net0267), .A(net082),
+     .B(net078), .cin(net079));
+full_adder I154 ( .cout(net0320), .sum(net0213), .A(net086),
+     .B(net081), .cin(net084));
+full_adder I151 ( .cout(net0216), .sum(net0349), .A(net040),
+     .B(net038), .cin(net080));
+full_adder I153 ( .cout(net0323), .sum(net0215), .A(net042),
+     .B(net092), .cin(net089));
+full_adder I149 ( .cout(net0352), .sum(net0331), .A(net087),
+     .B(net039), .cin(net077));
+full_adder I148 ( .cout(net0282), .sum(net0221), .A(net048),
+     .B(net043), .cin(net041));
+full_adder I147 ( .cout(net0222), .sum(net0223), .A(net022),
+     .B(net050), .cin(net074));
+full_adder I146 ( .cout(net0224), .sum(net0225), .A(net024),
+     .B(net049), .cin(net085));
+full_adder I145 ( .cout(net0266), .sum(net0322), .A(net026),
+     .B(net047), .cin(net051));
+full_adder I144 ( .cout(net0228), .sum(net0229), .A(net028),
+     .B(net025), .cin(net023));
+full_adder I142 ( .cout(net0287), .sum(net0354), .A(net032),
+     .B(net029), .cin(net027));
+full_adder I140 ( .cout(net0232), .sum(net0288), .A(net036),
+     .B(net033), .cin(net031));
+full_adder I139 ( .cout(net0293), .sum(net0235), .A(net017),
+     .B(net037), .cin(net035));
+full_adder I138 ( .cout(net0353), .sum(net0281), .A(net019),
+     .B(net018), .cin(net044));
+full_adder I137 ( .cout(net0336), .sum(net0280), .A(net26), .B(net020),
+     .cin(AB3[0]));
+full_adder I132 ( .cout(net0251), .sum(net0217), .A(AB12[14]),
+     .B(AB13[13]), .cin(AB14[12]));
+full_adder I133 ( .cout(net0255), .sum(net0246), .A(net0731),
+     .B(AB13[14]), .cin(AB14[13]));
+full_adder I129 ( .cout(net0230), .sum(net0205), .A(AB12[13]),
+     .B(AB13[12]), .cin(AB14[11]));
+full_adder I127 ( .cout(net0183), .sum(net0248), .A(AB12[12]),
+     .B(AB13[11]), .cin(AB14[10]));
+full_adder I125 ( .cout(net0231), .sum(net0234), .A(AB12[11]),
+     .B(AB13[10]), .cin(AB14[9]));
+full_adder I124 ( .cout(net0257), .sum(net0233), .A(AB9[14]),
+     .B(AB10[13]), .cin(AB11[12]));
+full_adder I126 ( .cout(net0227), .sum(net0240), .A(net0726),
+     .B(AB10[14]), .cin(AB11[13]));
+full_adder I121 ( .cout(net0256), .sum(net0244), .A(AB12[10]),
+     .B(AB13[9]), .cin(AB14[8]));
+full_adder I120 ( .cout(net0218), .sum(net0237), .A(AB9[13]),
+     .B(AB10[12]), .cin(AB11[11]));
+full_adder I118 ( .cout(net0239), .sum(net0165), .A(AB12[9]),
+     .B(AB13[8]), .cin(AB14[7]));
+full_adder I117 ( .cout(net0249), .sum(net0351), .A(AB9[12]),
+     .B(AB10[11]), .cin(AB11[10]));
+full_adder I115 ( .cout(net0211), .sum(net0203), .A(AB12[8]),
+     .B(AB13[7]), .cin(AB14[6]));
+full_adder I114 ( .cout(net0163), .sum(net0210), .A(AB9[11]),
+     .B(AB10[10]), .cin(AB11[9]));
+full_adder I113 ( .cout(net0164), .sum(net0212), .A(AB6[14]),
+     .B(AB7[13]), .cin(AB8[12]));
+full_adder I116 ( .cout(net0238), .sum(net0214), .A(net0572),
+     .B(AB7[14]), .cin(AB8[13]));
+full_adder I110 ( .cout(net0199), .sum(net0166), .A(AB12[7]),
+     .B(AB13[6]), .cin(AB14[5]));
+full_adder I109 ( .cout(net0192), .sum(net0195), .A(AB9[10]),
+     .B(AB10[9]), .cin(AB11[8]));
+full_adder I108 ( .cout(net0159), .sum(net0161), .A(AB6[13]),
+     .B(AB7[12]), .cin(AB8[11]));
+full_adder I106 ( .cout(net0170), .sum(net0189), .A(AB12[6]),
+     .B(AB13[5]), .cin(AB14[4]));
+full_adder I105 ( .cout(net0178), .sum(net0196), .A(AB9[9]),
+     .B(AB10[8]), .cin(AB11[7]));
+full_adder I104 ( .cout(net0190), .sum(net0191), .A(AB6[12]),
+     .B(AB7[11]), .cin(AB8[10]));
+full_adder I102 ( .cout(net0158), .sum(net0144), .A(AB12[5]),
+     .B(AB13[4]), .cin(AB14[3]));
+full_adder I101 ( .cout(net0176), .sum(net0139), .A(AB9[8]),
+     .B(AB10[7]), .cin(AB11[6]));
+full_adder I100 ( .cout(net0184), .sum(net0175), .A(AB6[11]),
+     .B(AB7[10]), .cin(AB8[9]));
+full_adder I99 ( .cout(net0177), .sum(net0197), .A(AB3[14]),
+     .B(AB4[13]), .cin(AB5[12]));
+full_adder I103 ( .cout(net0168), .sum(net0173), .A(net0511),
+     .B(AB4[14]), .cin(AB5[13]));
+full_adder I96 ( .cout(net0147), .sum(net0136), .A(AB12[4]),
+     .B(AB13[3]), .cin(AB14[2]));
+full_adder I95 ( .cout(net0157), .sum(net0130), .A(AB9[7]),
+     .B(AB10[6]), .cin(AB11[5]));
+full_adder I94 ( .cout(net0152), .sum(net0116), .A(AB6[10]),
+     .B(AB7[9]), .cin(AB8[8]));
+full_adder I93 ( .cout(net0125), .sum(net0128), .A(AB3[13]),
+     .B(AB4[12]), .cin(AB5[11]));
+full_adder I344 ( .cout(net0117), .sum(net0145), .A(net0695),
+     .B(AB2[14]), .cin(1'b1));
+full_adder I91 ( .cout(net0134), .sum(net0150), .A(AB12[3]),
+     .B(AB13[2]), .cin(AB14[1]));
+full_adder I90 ( .cout(net0142), .sum(net0154), .A(AB9[6]),
+     .B(AB10[5]), .cin(AB11[4]));
+full_adder I89 ( .cout(net0149), .sum(net0151), .A(AB6[9]), .B(AB7[8]),
+     .cin(AB8[7]));
+full_adder I88 ( .cout(net0132), .sum(net0137), .A(AB3[12]),
+     .B(AB4[11]), .cin(AB5[10]));
+full_adder I87 ( .cout(net0126), .sum(net0118), .A(net0719),
+     .B(AB1[14]), .cin(AB2[13]));
+full_adder I86 ( .cout(net0123), .sum(net0115), .A(AB12[2]),
+     .B(AB13[1]), .cin(AB14[0]));
+full_adder I84 ( .cout(net0146), .sum(net0138), .A(AB9[5]),
+     .B(AB10[4]), .cin(AB11[3]));
+full_adder I83 ( .cout(net0141), .sum(net0156), .A(AB6[8]), .B(AB7[7]),
+     .cin(AB8[6]));
+full_adder I82 ( .cout(net0140), .sum(net0153), .A(AB3[11]),
+     .B(AB4[10]), .cin(AB5[9]));
+full_adder I81 ( .cout(net052), .sum(net053), .A(AB0[14]), .B(AB1[13]),
+     .cin(AB2[12]));
+full_adder I79 ( .cout(net054), .sum(net055), .A(AB9[4]), .B(AB10[3]),
+     .cin(AB11[2]));
+full_adder I78 ( .cout(net056), .sum(net057), .A(AB6[7]), .B(AB7[6]),
+     .cin(AB8[5]));
+full_adder I77 ( .cout(net058), .sum(net059), .A(AB3[10]), .B(AB4[9]),
+     .cin(AB5[8]));
+full_adder I76 ( .cout(net060), .sum(net061), .A(AB0[13]), .B(AB1[12]),
+     .cin(AB2[11]));
+full_adder I75 ( .cout(net091), .sum(net083), .A(AB9[3]), .B(AB10[2]),
+     .cin(AB11[1]));
+full_adder I74 ( .cout(net076), .sum(net078), .A(AB6[6]), .B(AB7[5]),
+     .cin(AB8[4]));
+full_adder I73 ( .cout(net088), .sum(net084), .A(AB3[9]), .B(AB4[8]),
+     .cin(AB5[7]));
+full_adder I72 ( .cout(net093), .sum(net081), .A(AB0[12]), .B(AB1[11]),
+     .cin(AB2[10]));
+full_adder I71 ( .cout(net090), .sum(net075), .A(AB9[2]), .B(AB10[1]),
+     .cin(AB11[0]));
+full_adder I69 ( .cout(net079), .sum(net080), .A(AB6[5]), .B(AB7[4]),
+     .cin(AB8[3]));
+full_adder I68 ( .cout(net082), .sum(net089), .A(AB3[8]), .B(AB4[7]),
+     .cin(AB5[6]));
+full_adder I67 ( .cout(net086), .sum(net092), .A(AB0[11]), .B(AB1[10]),
+     .cin(AB2[9]));
+full_adder I65 ( .cout(net038), .sum(net039), .A(AB6[4]), .B(AB7[3]),
+     .cin(AB8[2]));
+full_adder I64 ( .cout(net040), .sum(net041), .A(AB3[7]), .B(AB4[6]),
+     .cin(AB5[5]));
+full_adder I63 ( .cout(net042), .sum(net043), .A(AB0[10]), .B(AB1[9]),
+     .cin(AB2[8]));
+full_adder I62 ( .cout(net077), .sum(net074), .A(AB6[3]), .B(AB7[2]),
+     .cin(AB8[1]));
+full_adder I61 ( .cout(net087), .sum(net085), .A(AB3[6]), .B(AB4[5]),
+     .cin(AB5[4]));
+full_adder I60 ( .cout(net048), .sum(net049), .A(AB0[9]), .B(AB1[8]),
+     .cin(AB2[7]));
+full_adder I59 ( .cout(net050), .sum(net051), .A(AB6[2]), .B(AB7[1]),
+     .cin(AB8[0]));
+full_adder I57 ( .cout(net022), .sum(net023), .A(AB3[5]), .B(AB4[4]),
+     .cin(AB5[3]));
+full_adder I56 ( .cout(net024), .sum(net025), .A(AB0[8]), .B(AB1[7]),
+     .cin(AB2[6]));
+full_adder I54 ( .cout(net026), .sum(net027), .A(AB3[4]), .B(AB4[3]),
+     .cin(AB5[2]));
+full_adder I53 ( .cout(net028), .sum(net029), .A(AB0[7]), .B(AB1[6]),
+     .cin(AB2[5]));
+full_adder I52 ( .cout(net030), .sum(net031), .A(AB3[3]), .B(AB4[2]),
+     .cin(AB5[1]));
+full_adder I51 ( .cout(net032), .sum(net033), .A(AB0[6]), .B(AB1[5]),
+     .cin(AB2[4]));
+full_adder I50 ( .cout(net034), .sum(net035), .A(AB3[2]), .B(AB4[1]),
+     .cin(AB5[0]));
+full_adder I48 ( .cout(net036), .sum(net037), .A(AB0[5]), .B(AB1[4]),
+     .cin(AB2[3]));
+full_adder I46 ( .cout(net017), .sum(net018), .A(AB0[4]), .B(AB1[3]),
+     .cin(AB2[2]));
+full_adder I45 ( .cout(net019), .sum(net020), .A(AB0[3]), .B(AB1[2]),
+     .cin(AB2[1]));
+full_adder I42 ( .cout(net26), .sum(net27), .A(AB0[2]), .B(AB1[1]),
+     .cin(AB2[0]));
+INVX1 I380 ( .Y(net0744), .A(AB15[1]));
+INVX1 I379 ( .Y(net0167), .A(AB15[2]));
+INVX1 I378 ( .Y(net0722), .A(AB15[3]));
+INVX1 I377 ( .Y(net0657), .A(AB15[5]));
+INVX1 I376 ( .Y(net0624), .A(AB15[6]));
+INVX1 I375 ( .Y(net0611), .A(AB15[7]));
+INVX1 I374 ( .Y(net011), .A(AB15[8]));
+INVX1 I373 ( .Y(net05), .A(AB13[15]));
+INVX1 I372 ( .Y(net0563), .A(AB14[15]));
+INVX1 I370 ( .Y(net07), .A(AB15[14]));
+INVX1 I369 ( .Y(net0549), .A(AB15[13]));
+INVX1 I368 ( .Y(net0688), .A(AB15[12]));
+INVX1 I367 ( .Y(net0731), .A(AB12[15]));
+INVX1 I366 ( .Y(net08), .A(AB15[11]));
+INVX1 I350 ( .Y(net0719), .A(AB0[15]));
+INVX1 I351 ( .Y(net0687), .A(AB15[0]));
+INVX1 I352 ( .Y(net0695), .A(AB1[15]));
+INVX1 I353 ( .Y(net0110), .A(AB2[15]));
+INVX1 I354 ( .Y(net0511), .A(AB3[15]));
+INVX1 I355 ( .Y(net0510), .A(AB4[15]));
+INVX1 I356 ( .Y(net0709), .A(AB5[15]));
+INVX1 I357 ( .Y(net0711), .A(AB15[4]));
+INVX1 I358 ( .Y(net0572), .A(AB6[15]));
+INVX1 I359 ( .Y(net0678), .A(AB7[15]));
+INVX1 I360 ( .Y(net066), .A(AB8[15]));
+INVX1 I361 ( .Y(net0726), .A(AB9[15]));
+INVX1 I362 ( .Y(net0734), .A(AB15[9]));
+INVX1 I363 ( .Y(net0681), .A(AB10[15]));
+INVX1 I364 ( .Y(net0627), .A(AB11[15]));
+INVX1 I365 ( .Y(net0654), .A(AB15[10]));
+INVX1 I44 ( .Y(z[0]), .A(net04));
+INVX1 I43 ( .Y(net04), .A(AB0[0]));
+csk I348 ( .COUT_adder(net0635), .S(z[22:7]), .A({sumA[15], sumA[14],
+     sumA[13], sumA[12], sumA[11], sumA[10], sumA[9], sumA[8], sumA[7],
+     sumA[6], sumA[5], sumA[4], sumA[3], sumA[2], sumA[1], sumA[0]}),
+     .B({sumB[15], sumB[14], sumB[13], sumB[12], sumB[11], sumB[10],
+     sumB[9], sumB[8], sumB[7], sumB[6], sumB[5], sumB[4], sumB[3],
+     sumB[2], sumB[1], sumB[0]}), .CIN(1'b0));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+module INV16 ( out, in );
+
+
+
+output [15:0]  out;
+
+input [15:0]  in;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "INV16";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+INVX1 I16 ( .Y(out[15]), .A(in[15]));
+INVX1 I15 ( .Y(out[14]), .A(in[14]));
+INVX1 I14 ( .Y(out[13]), .A(in[13]));
+INVX1 I13 ( .Y(out[12]), .A(in[12]));
+INVX1 I12 ( .Y(out[11]), .A(in[11]));
+INVX1 I11 ( .Y(out[10]), .A(in[10]));
+INVX1 I10 ( .Y(out[9]), .A(in[9]));
+INVX1 I9 ( .Y(out[8]), .A(in[8]));
+INVX1 I8 ( .Y(out[7]), .A(in[7]));
+INVX1 I7 ( .Y(out[6]), .A(in[6]));
+INVX1 I6 ( .Y(out[5]), .A(in[5]));
+INVX1 I5 ( .Y(out[4]), .A(in[4]));
+INVX1 I4 ( .Y(out[3]), .A(in[3]));
+INVX1 I3 ( .Y(out[2]), .A(in[2]));
+INVX1 I2 ( .Y(out[1]), .A(in[1]));
+INVX1 I1 ( .Y(out[0]), .A(in[0]));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+module conv23_to_16 ( OUT, IN );
+
+
+
+output [15:0]  OUT;
+
+input [22:0]  IN;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "conv23_to_16";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+INVX1 I31 ( .Y(OUT[0]), .A(net5));
+INVX1 I30 ( .Y(OUT[1]), .A(net4));
+INVX1 I29 ( .Y(OUT[2]), .A(net3));
+INVX1 I28 ( .Y(OUT[3]), .A(net2));
+INVX1 I27 ( .Y(OUT[4]), .A(net1));
+INVX1 I26 ( .Y(OUT[5]), .A(net13));
+INVX1 I25 ( .Y(OUT[6]), .A(net12));
+INVX1 I24 ( .Y(OUT[7]), .A(net11));
+INVX1 I23 ( .Y(OUT[8]), .A(net10));
+INVX1 I22 ( .Y(OUT[9]), .A(net9));
+INVX1 I21 ( .Y(OUT[10]), .A(net8));
+INVX1 I20 ( .Y(OUT[11]), .A(net7));
+INVX1 I19 ( .Y(OUT[12]), .A(net6));
+INVX1 I18 ( .Y(OUT[13]), .A(net16));
+INVX1 I17 ( .Y(OUT[14]), .A(net15));
+INVX1 I16 ( .Y(OUT[15]), .A(net14));
+INVX1 I15 ( .Y(net5), .A(IN[0]));
+INVX1 I14 ( .Y(net4), .A(IN[1]));
+INVX1 I13 ( .Y(net3), .A(IN[2]));
+INVX1 I12 ( .Y(net2), .A(IN[3]));
+INVX1 I11 ( .Y(net1), .A(IN[4]));
+INVX1 I10 ( .Y(net13), .A(IN[5]));
+INVX1 I9 ( .Y(net12), .A(IN[6]));
+INVX1 I8 ( .Y(net11), .A(IN[7]));
+INVX1 I7 ( .Y(net10), .A(IN[8]));
+INVX1 I6 ( .Y(net9), .A(IN[9]));
+INVX1 I5 ( .Y(net8), .A(IN[10]));
+INVX1 I4 ( .Y(net7), .A(IN[11]));
+INVX1 I3 ( .Y(net6), .A(IN[12]));
+INVX1 I2 ( .Y(net16), .A(IN[13]));
+INVX1 I1 ( .Y(net15), .A(IN[14]));
+INVX1 I0 ( .Y(net14), .A(IN[15]));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+module Weight0 ( OUT_IMG, OUT_REAL );
+
+
+output [15:0]  OUT_REAL;
+output [15:0]  OUT_IMG;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "Weight0";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+INVX1 I35 ( .Y(OUT_REAL[0]), .A(1'b1));
+INVX1 I63 ( .Y(OUT_IMG[0]), .A(1'b1));
+INVX1 I34 ( .Y(OUT_REAL[1]), .A(1'b0));
+INVX1 I62 ( .Y(OUT_IMG[1]), .A(1'b1));
+INVX1 I33 ( .Y(OUT_REAL[2]), .A(1'b0));
+INVX1 I61 ( .Y(OUT_IMG[2]), .A(1'b1));
+INVX1 I32 ( .Y(OUT_REAL[3]), .A(1'b1));
+INVX1 I59 ( .Y(OUT_IMG[3]), .A(1'b1));
+INVX1 I31 ( .Y(OUT_REAL[4]), .A(1'b1));
+INVX1 I57 ( .Y(OUT_IMG[4]), .A(1'b1));
+INVX1 I30 ( .Y(OUT_REAL[5]), .A(1'b1));
+INVX1 I55 ( .Y(OUT_IMG[5]), .A(1'b1));
+INVX1 I29 ( .Y(OUT_REAL[6]), .A(1'b1));
+INVX1 I53 ( .Y(OUT_IMG[6]), .A(1'b1));
+INVX1 I28 ( .Y(OUT_REAL[7]), .A(1'b1));
+INVX1 I51 ( .Y(OUT_IMG[7]), .A(1'b1));
+INVX1 I27 ( .Y(OUT_REAL[8]), .A(1'b1));
+INVX1 I49 ( .Y(OUT_IMG[8]), .A(1'b1));
+INVX1 I26 ( .Y(OUT_REAL[9]), .A(1'b1));
+INVX1 I47 ( .Y(OUT_IMG[9]), .A(1'b1));
+INVX1 I25 ( .Y(OUT_REAL[10]), .A(1'b1));
+INVX1 I45 ( .Y(OUT_IMG[10]), .A(1'b1));
+INVX1 I24 ( .Y(OUT_REAL[11]), .A(1'b1));
+INVX1 I43 ( .Y(OUT_IMG[11]), .A(1'b1));
+INVX1 I23 ( .Y(OUT_REAL[12]), .A(1'b1));
+INVX1 I39 ( .Y(OUT_IMG[13]), .A(1'b1));
+INVX1 I21 ( .Y(OUT_REAL[14]), .A(1'b1));
+INVX1 I20 ( .Y(OUT_REAL[15]), .A(1'b1));
+INVX1 I41 ( .Y(OUT_IMG[12]), .A(1'b1));
+INVX1 I22 ( .Y(OUT_REAL[13]), .A(1'b1));
+INVX1 I19 ( .Y(OUT_IMG[15]), .A(1'b1));
+INVX1 I37 ( .Y(OUT_IMG[14]), .A(1'b1));
+
+endmodule
+
+
+`timescale 1ns / 1ns
+module ButterflyUnitW0 ( OUT0Img, OUT0Real, OUT1Img, OUT1Real, X0Img,
+     X0Real, X1Img, X1Real );
+
+
+
+output [15:0]  OUT1Real;
+output [15:0]  OUT0Real;
+output [15:0]  OUT1Img;
+output [15:0]  OUT0Img;
+
+input [15:0]  X1Img;
+input [15:0]  X0Real;
+input [15:0]  X0Img;
+input [15:0]  X1Real;
+
+
+wire  [0:15]  net32;
+
+wire  [0:15]  net29;
+
+wire  [0:15]  net055;
+
+wire  [0:15]  net033;
+
+wire  [15:0]  OUT_REAL;
+
+wire  [0:15]  net041;
+
+wire  [0:15]  net042;
+
+wire  [0:22]  net27;
+
+wire  [0:22]  net036;
+
+wire  [0:15]  net054;
+
+wire  [0:15]  net044;
+
+wire  [0:22]  net28;
+
+wire  [15:0]  OUT_IMG;
+
+wire  [0:15]  net30;
+
+wire  [0:22]  net035;
+
+
+specify 
+    specparam CDS_LIBNAME  = "fft";
+    specparam CDS_CELLNAME = "ButterflyUnitW0";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+wallace_multi I1 ( .z(net035[0:22]), .A(OUT_REAL[15:0]),
+     .B(X1Img[15:0]));
+wallace_multi I0 ( .z(net036[0:22]), .A(OUT_IMG[15:0]),
+     .B(X1Img[15:0]));
+wallace_multi I2 ( .z(net28[0:22]), .A(OUT_REAL[15:0]),
+     .B(X1Real[15:0]));
+wallace_multi I15 ( .z(net27[0:22]), .A(OUT_IMG[15:0]),
+     .B(X1Real[15:0]));
+INV16 I29 ( .out(net055[0:15]), .in(net32[0:15]));
+INV16 I28 ( .out(net054[0:15]), .in(net044[0:15]));
+INV16 I3 ( .out(net033[0:15]), .in(net29[0:15]));
+conv23_to_16 I13 ( .OUT(net042[0:15]), .IN(net27[0:22]));
+conv23_to_16 I10 ( .OUT(net041[0:15]), .IN(net035[0:22]));
+conv23_to_16 I17 ( .OUT(net30[0:15]), .IN(net28[0:22]));
+conv23_to_16 I18 ( .OUT(net29[0:15]), .IN(net036[0:22]));
+csk I20 ( .COUT_adder(net061), .S(OUT1Img[15:0]), .A(X0Img[15:0]),
+     .B(net054[0:15]), .CIN(1'b1));
+csk I16 ( .COUT_adder(net047), .S(net044[0:15]), .A(net042[0:15]),
+     .B(net041[0:15]), .CIN(1'b0));
+csk I7 ( .COUT_adder(net048), .S(OUT0Img[15:0]), .A(X0Img[15:0]),
+     .B(net044[0:15]), .CIN(1'b0));
+csk I11 ( .COUT_adder(net33), .S(OUT0Real[15:0]), .A(X0Real[15:0]),
+     .B(net32[0:15]), .CIN(1'b0));
+csk I12 ( .COUT_adder(net34), .S(OUT1Real[15:0]), .A(X0Real[15:0]),
+     .B(net055[0:15]), .CIN(1'b1));
+csk I14 ( .COUT_adder(net35), .S(net32[0:15]), .A(net30[0:15]),
+     .B(net033[0:15]), .CIN(1'b1));
+Weight0 I5 ( .OUT_REAL(OUT_REAL[15:0]), .OUT_IMG(OUT_IMG[15:0]));
+
+endmodule
+
+

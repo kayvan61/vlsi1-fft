@@ -1,0 +1,408 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2018 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v18.12-s106_1, built Tue Dec 11 14:18:32 PST 2018
+Options:	
+Date:		Mon Nov 22 21:13:54 2021
+Host:		kamek.ece.utexas.edu (x86_64 w/Linux 3.10.0-1160.42.2.el7.x86_64) (16cores*64cpus*Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz 22528KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		invs	Innovus Implementation System	18.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+**ERROR: (IMPOAX-142):	Could not open shared library libinnovusoax22.so : /usr/local/packages/cadence_2018/INNOVUS181/tools.lnx86/lib/64bit/libstdc++.so.6: version `CXXABI_1.3.9' not found (required by /usr/local/packages/cadence_2018/ic618/oa_v22.60.007/lib/linux_rhel60_64/opt/liboaDesign.so)
+
+**ERROR: (IMPOAX-142):	Could not open shared library libcdsSkillPcell.so : /usr/local/packages/cadence_2018/INNOVUS181/tools.lnx86/lib/64bit/libcdsSkillPcell.so: undefined symbol: _ZTIN12OpenAccess_413oaFSComponentE
+
+**ERROR: (IMPOAX-142):	OA features will be disabled in this session.
+
+Change the soft stacksize limit to 0.2%RAM (770 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> win
+<CMD> set init_gnd_net 1'b0
+<CMD> set init_lef_file gscl45nm.lef
+<CMD> set init_verilog {apr45nm.v BufferflyUnit}
+<CMD> set init_pwr_net 1'b1
+<CMD> init_design
+**ERROR: (IMPOAX-820):	The OA features are disabled in the current session of Innovus because the oax shared library could not be loaded properly. This could be because your installation was not properly configured. To enable OA features, exit the current session and re-launch Innovus either after fixing your installation by running the Configure Installation phase, or after setting the OA_HOME variable to point to a proper OA installation. Check the "OpenAccess Installation and Configuration Guide" manual for more information.
+
+**ERROR: (IMPOAX-850):	oaxCreateCdsLibArray command cannot be run as OA features are disabled in this session.
+
+Loading LEF file gscl45nm.lef ...
+**WARN: (IMPLF-155):	ViaRule only supports routing/cut layer, but poly layer found for viaRule 'M1_POLY', 
+Set DBUPerIGU to M2 pitch 380.
+
+##  Check design process and node:  ##
+##  Both design process and tech node are not set.
+
+
+viaInitial starts at Mon Nov 22 21:14:42 2021
+viaInitial ends at Mon Nov 22 21:14:42 2021
+*** End library_loading (cpu=0.00min, real=0.00min, mem=0.0M, fe_cpu=0.27min, fe_real=0.80min, fe_mem=585.1M) ***
+#% Begin Load netlist data ... (date=11/22 21:14:42, mem=424.2M)
+*** Begin netlist parsing (mem=585.1M) ***
+Created 0 new cells from 0 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist 'apr45nm.v'
+Reading verilog netlist 'BufferflyUnit'
+
+*** Memory Usage v#1 (Current mem = 588.090M, initial mem = 251.672M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=588.1M) ***
+#% End Load netlist data ... (date=11/22 21:14:42, total cpu=0:00:00.0, real=0:00:00.0, peak res=427.9M, current mem=427.9M)
+Top level cell is BufferflyUnit.
+Hooked 0 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell BufferflyUnit ...
+**WARN: (IMPECO-560):	The netlist is not unique, because the module 'xor_' is instantiated multiple times. Make the netlist unique by running 'set init_design_uniquify 1' before loading the design to avoid the problem.
+**WARN: (IMPECO-560):	The netlist is not unique, because the module 'start_logic_csa' is instantiated multiple times. Make the netlist unique by running 'set init_design_uniquify 1' before loading the design to avoid the problem.
+**WARN: (IMPECO-560):	The netlist is not unique, because the module 'grey_cell' is instantiated multiple times. Make the netlist unique by running 'set init_design_uniquify 1' before loading the design to avoid the problem.
+**WARN: (IMPECO-560):	The netlist is not unique, because the module 'mux2' is instantiated multiple times. Make the netlist unique by running 'set init_design_uniquify 1' before loading the design to avoid the problem.
+**WARN: (IMPECO-560):	The netlist is not unique, because the module 'csk' is instantiated multiple times. Make the netlist unique by running 'set init_design_uniquify 1' before loading the design to avoid the problem.
+**WARN: (IMPECO-560):	The netlist is not unique, because the module 'and_16bit_1bit' is instantiated multiple times. Make the netlist unique by running 'set init_design_uniquify 1' before loading the design to avoid the problem.
+**WARN: (IMPECO-560):	The netlist is not unique, because the module 'half_adder' is instantiated multiple times. Make the netlist unique by running 'set init_design_uniquify 1' before loading the design to avoid the problem.
+**WARN: (IMPECO-560):	The netlist is not unique, because the module 'full_adder' is instantiated multiple times. Make the netlist unique by running 'set init_design_uniquify 1' before loading the design to avoid the problem.
+**WARN: (IMPECO-560):	The netlist is not unique, because the module 'seven_2_16' is instantiated multiple times. Make the netlist unique by running 'set init_design_uniquify 1' before loading the design to avoid the problem.
+*** Netlist is NOT unique.
+Set DBUPerIGU to techSite CoreSite width 760.
+** info: there are 47 modules.
+** info: there are 4475 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 617.512M, initial mem = 251.672M) ***
+Horizontal Layer M1 offset = 190 (guessed)
+Vertical Layer M2 offset = 190 (guessed)
+Suggestion: specify LAYER OFFSET in LEF file
+Reason: hard to extract LAYER OFFSET from standard cells
+Generated pitch 1.68 in metal10 is different from 1.71 defined in technology file in preferred direction.
+Generated pitch 0.84 in metal8 is different from 0.855 defined in technology file in preferred direction.
+Generated pitch 0.95 in metal7 is different from 0.855 defined in technology file in preferred direction.
+Generated pitch 0.28 in metal6 is different from 0.285 defined in technology file in preferred direction.
+Generated pitch 0.28 in metal4 is different from 0.285 defined in technology file in preferred direction.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+**WARN: (IMPSYT-7328):	The design has been initialized in physical-only mode because the init_mmmc_file global variable was not defined. Timing analysis will not be possible within this session. You can only use commands that do not depend on timing data. If you need to use timing, you need to restart with an init_mmmc_file to define the timing setup, or you can save this design and use restoreDesign -mmmc_file <viewDef.tcl> to add the timing setup information.
+Extraction setup Started 
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-155            1  ViaRule only supports routing/cut layer,...
+WARNING   IMPSYT-7328          1  The design has been initialized in physi...
+WARNING   IMPECO-560           9  The netlist is not unique, because the m...
+ERROR     IMPOAX-820           1  The OA features are disabled in the curr...
+ERROR     IMPOAX-850           1  %s command cannot be run as OA features ...
+*** Message Summary: 11 warning(s), 2 error(s)
+
+<CMD> getIoFlowFlag
+<CMD> setFPlanRowSpacingAndType 10.0 1
+Row spacing should be a multiple of the first horizontal routing layer pitch.
+Adjusting row spacing to 10.07.
+<CMD> setIoFlowFlag 0
+<CMD> floorPlan -flip n -site CoreSite -r 1 0.7 20.0 20.0 20.0 20.0
+Horizontal Layer M1 offset = 190 (guessed)
+Vertical Layer M2 offset = 190 (guessed)
+Suggestion: specify LAYER OFFSET in LEF file
+Reason: hard to extract LAYER OFFSET from standard cells
+Generated pitch 1.68 in metal10 is different from 1.71 defined in technology file in preferred direction.
+Generated pitch 0.84 in metal8 is different from 0.855 defined in technology file in preferred direction.
+Generated pitch 0.95 in metal7 is different from 0.855 defined in technology file in preferred direction.
+Generated pitch 0.28 in metal6 is different from 0.285 defined in technology file in preferred direction.
+Generated pitch 0.28 in metal4 is different from 0.285 defined in technology file in preferred direction.
+**WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer metal10 -stacked_via_bottom_layer metal1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {1'b0 1'b1} -type core_rings -follow core -layer {top metal1 bottom metal1 left metal2 right metal2} -width {top .5 bottom .5 left .5 right .5} -spacing {top .3 bottom .3 left .3 right .3} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 1 -extend_corner {} -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 754.5M)
+The power planner has cut rows, and such rows will be considered to be placement objects.
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+| metal1 |        4       |       NA       |
+|  via1  |        8       |        0       |
+| metal2 |        4       |       NA       |
++--------+----------------+----------------+
+**WARN: (IMPTCM-125):	Option "-doCongOpt" for command getPlaceMode is obsolete and will be ignored. It no longer has any effect and should be removed from your script.
+<CMD> setRouteMode -earlyGlobalHonorMsvRouteConstraint false -earlyGlobalRoutePartitionPinGuide true
+<CMD> setEndCapMode -reset
+<CMD> setEndCapMode -boundary_tap false
+<CMD> setNanoRouteMode -quiet -droutePostRouteSpreadWire 1
+<CMD> setNanoRouteMode -quiet -timingEngine {}
+<CMD> setUsefulSkewMode -maxSkew false -noBoundary false -useCells {} -maxAllowedDelay 1
+**WARN: (IMPOPT-6036):	-useCells list is empty.
+**WARN: (IMPTCM-125):	Option "-modulePlan" for command getPlaceMode is obsolete and will be ignored. It no longer has any effect and should be removed from your script.
+<CMD> setPlaceMode -reset
+<CMD> setPlaceMode -congEffort auto -timingDriven 1 -modulePlan 1 -clkGateAware 0 -powerDriven 0 -ignoreScan 1 -reorderScan 1 -ignoreSpare 1 -placeIOPins 1 -moduleAwareSpare 0 -checkPinLayerForAccess {  1 } -preserveRouting 0 -rmAffectedRouting 0 -checkRoute 0 -swapEEQ 0
+**WARN: (IMPTCM-125):	Option "-modulePlan" for command setPlaceMode is obsolete and will be ignored. It no longer has any effect and should be removed from your script.
+**WARN: (IMPTCM-125):	Option "-checkPinLayerForAccess" for command setPlaceMode is obsolete and will be ignored. It no longer has any effect and should be removed from your script.
+<CMD> setPlaceMode -fp false
+<CMD> place_design
+**WARN: (IMPSP-9513):	Timing constraint file does not exist
+**WARN: (IMPSP-9514):	Non-TimingDriven placement will be performed.
+AAE DB initialization (MEM=811.02 CPU=0:00:00.1 REAL=0:00:00.0) 
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: BufferflyUnit
+# Design Mode: 90nm
+# Analysis Mode: Non-MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+**ERROR: (IMPDC-634):	Failed to build the timing graph since timing library files have not yet been loaded. To resolve this, check that timing library files have been correctly specified in the loaded design database.
+Type 'man IMPDC-634' for more detail.
+Start delay calculation (fullDC) (1 T). (MEM=828.566)
+Updating RC grid for preRoute extraction ...
+Total number of fetched objects 4489
+End delay calculation. (MEM=955.094 CPU=0:00:00.2 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=945.555 CPU=0:00:00.4 REAL=0:00:01.0)
+*** Starting placeDesign default flow ***
+Deleted 0 physical inst  (cell - / prefix -).
+INFO: Exclusive Group flow has been enabled by user.
+INFO: #ExclusiveGroups=0
+INFO: There are no Exclusive Groups.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Extracting macro/IO cell pins and blockage ...... 
+Pin and blockage extraction finished
+*** Starting "NanoPlace(TM) placement v#16 (mem=931.4M)" ...
+No user-set net weight.
+Net fanout histogram:
+2		: 3320 (74.4%) nets
+3		: 57 (1.3%) nets
+4     -	14	: 1053 (23.6%) nets
+15    -	39	: 32 (0.7%) nets
+40    -	79	: 0 (0.0%) nets
+80    -	159	: 0 (0.0%) nets
+160   -	319	: 0 (0.0%) nets
+320   -	639	: 0 (0.0%) nets
+640   -	1279	: 0 (0.0%) nets
+1280  -	2559	: 0 (0.0%) nets
+2560  -	5119	: 0 (0.0%) nets
+5120+		: 0 (0.0%) nets
+Options: ignoreScan ignoreSpare pinGuide congEffort=auto gpeffort=medium 
+**WARN: (IMPSP-9042):	Scan chains were not defined, -place_global_ignore_scan option will be ignored.
+Define the scan chains before using this option.
+Type 'man IMPSP-9042' for more detail.
+#std cell=4475 (0 fixed + 4475 movable) #block=0 (0 floating + 0 preplaced)
+#ioInst=0 #net=4462 #term=11747 #term/net=2.63, #fixedIo=0, #floatIo=0, #fixedPin=0, #floatPin=46
+stdCell: 4475 single + 0 double + 0 multi
+Total standard cell length = 3.0902 (mm), area = 0.0076 (mm^2)
+**Info: (IMPSP-307): Design contains fractional 20 cells.
+Estimated cell power/ground rail width = 0.308 um
+Average module density = 0.772.
+Density for the design = 0.772.
+       = stdcell_area 8132 sites (7633 um^2) / alloc_area 10531 sites (9884 um^2).
+Pin Density = 0.9691.
+            = total # of pins 11747 / total area 12122.
+=== lastAutoLevel = 8 
+**WARN: (IMPSP-9531):	Turning off clkGateAware when timingDriven is off
+Iteration  1: Total net bbox = 4.534e-11 (0.00e+00 4.53e-11)
+              Est.  stn bbox = 4.658e-11 (0.00e+00 4.66e-11)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 888.8M
+Iteration  2: Total net bbox = 4.534e-11 (0.00e+00 4.53e-11)
+              Est.  stn bbox = 4.658e-11 (0.00e+00 4.66e-11)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 888.8M
+Iteration  3: Total net bbox = 6.547e+01 (3.41e+01 3.14e+01)
+              Est.  stn bbox = 7.087e+01 (3.70e+01 3.39e+01)
+              cpu = 0:00:00.2 real = 0:00:00.0 mem = 905.8M
+Iteration  4: Total net bbox = 3.214e+04 (1.89e+04 1.33e+04)
+              Est.  stn bbox = 3.626e+04 (2.12e+04 1.51e+04)
+              cpu = 0:00:00.7 real = 0:00:01.0 mem = 905.8M
+Iteration  5: Total net bbox = 3.120e+04 (1.75e+04 1.37e+04)
+              Est.  stn bbox = 3.593e+04 (2.02e+04 1.57e+04)
+              cpu = 0:00:00.9 real = 0:00:01.0 mem = 905.8M
+Iteration  6: Total net bbox = 3.220e+04 (1.73e+04 1.49e+04)
+              Est.  stn bbox = 3.710e+04 (2.01e+04 1.70e+04)
+              cpu = 0:00:00.5 real = 0:00:00.0 mem = 906.8M
+Iteration  7: Total net bbox = 3.476e+04 (1.87e+04 1.61e+04)
+              Est.  stn bbox = 3.968e+04 (2.15e+04 1.82e+04)
+              cpu = 0:00:00.2 real = 0:00:00.0 mem = 909.9M
+Iteration  8: Total net bbox = 3.476e+04 (1.87e+04 1.61e+04)
+              Est.  stn bbox = 3.968e+04 (2.15e+04 1.82e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 909.9M
+Iteration  9: Total net bbox = 3.703e+04 (2.03e+04 1.67e+04)
+              Est.  stn bbox = 4.252e+04 (2.35e+04 1.90e+04)
+              cpu = 0:00:00.4 real = 0:00:01.0 mem = 909.9M
+Iteration 10: Total net bbox = 3.482e+04 (2.00e+04 1.48e+04)
+              Est.  stn bbox = 4.029e+04 (2.32e+04 1.71e+04)
+              cpu = 0:00:00.4 real = 0:00:00.0 mem = 909.9M
+Iteration 11: Total net bbox = 3.641e+04 (2.01e+04 1.63e+04)
+              Est.  stn bbox = 4.190e+04 (2.32e+04 1.87e+04)
+              cpu = 0:00:02.5 real = 0:00:03.0 mem = 909.9M
+Iteration 12: Total net bbox = 3.641e+04 (2.01e+04 1.63e+04)
+              Est.  stn bbox = 4.190e+04 (2.32e+04 1.87e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 909.9M
+*** cost = 3.641e+04 (2.01e+04 1.63e+04) (cpu for global=0:00:05.1) real=0:00:06.0***
+net ignore based on current view = 0
+Solver runtime cpu: 0:00:04.6 real: 0:00:04.5
+Core Placement runtime cpu: 0:00:05.0 real: 0:00:06.0
+**WARN: (IMPSP-9025):	No scan chain specified/traced.
+Type 'man IMPSP-9025' for more detail.
+**Info: (IMPSP-307): Design contains fractional 20 cells.
+*** Starting refinePlace (0:00:27.2 mem=909.9M) ***
+Total net bbox length = 3.644e+04 (2.010e+04 1.634e+04) (ext = 1.533e+03)
+Move report: Detail placement moves 4475 insts, mean move: 0.72 um, max move: 14.83 um
+	Max move on inst (I2/I0/I5/I8): (216.96, 170.65) --> (214.70, 158.08)
+	Runtime: CPU: 0:00:00.4 REAL: 0:00:00.0 MEM: 909.9MB
+Summary Report:
+Instances move: 4475 (out of 4475 movable)
+Instances flipped: 0
+Mean displacement: 0.72 um
+Max displacement: 14.83 um (Instance: I2/I0/I5/I8) (216.956, 170.651) -> (214.7, 158.08)
+	Length: 2 sites, height: 1 rows, site name: CoreSite, cell type: NAND2X1
+Total net bbox length = 3.689e+04 (2.065e+04 1.624e+04) (ext = 1.525e+03)
+Runtime: CPU: 0:00:00.4 REAL: 0:00:00.0 MEM: 909.9MB
+*** Finished refinePlace (0:00:27.6 mem=909.9M) ***
+*** End of Placement (cpu=0:00:05.6, real=0:00:06.0, mem=909.9M) ***
+**Info: (IMPSP-307): Design contains fractional 20 cells.
+default core: bins with density > 0.750 = 45.00 % ( 9 / 20 )
+Density distribution unevenness ratio = 9.601%
+Starting IO pin assignment...
+The design is not routed. Using placement based method for pin assignment.
+Completed IO pin assignment.
+
+Starting congestion repair ...
+[NR-eGR] honorMsvRouteConstraint: false
+[NR-eGR] honorClockSpecNDR      : 0
+[NR-eGR] minRouteLayer          : 2
+[NR-eGR] maxRouteLayer          : 127
+[NR-eGR] numTracksPerClockWire  : 0
+[NR-eGR] metal1 has no routable track
+[NR-eGR] metal2 has single uniform track structure
+[NR-eGR] metal3 has single uniform track structure
+[NR-eGR] metal4 has single uniform track structure
+[NR-eGR] metal5 has single uniform track structure
+[NR-eGR] metal6 has single uniform track structure
+[NR-eGR] metal7 has single uniform track structure
+[NR-eGR] metal8 has single uniform track structure
+[NR-eGR] metal9 has single uniform track structure
+[NR-eGR] metal10 has single uniform track structure
+[NR-eGR] Read 12 PG shapes in 0.000 seconds
+
+[NR-eGR] numRoutingBlks=0 numInstBlks=0 numPGBlocks=12 numBumpBlks=0 numBoundaryFakeBlks=0
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read numTotalNets=4462  numIgnoredNets=0
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id: 0  Nets: 4462 
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 4462 net(s) in layer range [2, 10]
+[NR-eGR] earlyGlobalRoute overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 3.934216e+04um
+[NR-eGR] 
+[NR-eGR] Congestion Analysis By layer: (blocked Gcells are excluded) 
+[NR-eGR]                        OverCon            
+[NR-eGR]                         #Gcell     %Gcell
+[NR-eGR]       Layer                (0)    OverCon 
+[NR-eGR] ----------------------------------------------
+[NR-eGR]  metal1  (1)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  metal2  (2)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  metal3  (3)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  metal4  (4)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  metal5  (5)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  metal6  (6)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  metal7  (7)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  metal8  (8)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  metal9  (9)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] metal10 (10)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] ----------------------------------------------
+[NR-eGR] Total                0( 0.00%)   ( 0.00%) 
+[NR-eGR] 
+[NR-eGR] Overflow after earlyGlobalRoute (GR compatible) 0.00% H + 0.00% V
+[NR-eGR] Overflow after earlyGlobalRoute 0.00% H + 0.00% V
+Early Global Route congestion estimation runtime: 0.04 seconds, mem = 917.0M
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+
+=== incrementalPlace Internal Loop 1 ===
+Skipped repairing congestion.
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] metal1  (1F) length: 0.000000e+00um, number of vias: 11701
+[NR-eGR] metal2  (2V) length: 1.307375e+04um, number of vias: 12886
+[NR-eGR] metal3  (3H) length: 1.758448e+04um, number of vias: 1517
+[NR-eGR] metal4  (4V) length: 6.332035e+03um, number of vias: 1092
+[NR-eGR] metal5  (5H) length: 5.031819e+03um, number of vias: 7
+[NR-eGR] metal6  (6V) length: 7.600000e-01um, number of vias: 3
+[NR-eGR] metal7  (7H) length: 6.700000e-01um, number of vias: 0
+[NR-eGR] metal8  (8V) length: 0.000000e+00um, number of vias: 0
+[NR-eGR] metal9  (9H) length: 0.000000e+00um, number of vias: 0
+[NR-eGR] metal10 (10V) length: 0.000000e+00um, number of vias: 0
+[NR-eGR] Total length: 4.202352e+04um, number of vias: 27206
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total eGR-routed clock nets wire length: 0.000000e+00um 
+[NR-eGR] --------------------------------------------------------------------------
+Early Global Route wiring runtime: 0.04 seconds, mem = 933.0M
+End of congRepair (cpu=0:00:00.1, real=0:00:00.0)
+*** Finishing placeDesign default flow ***
+**placeDesign ... cpu = 0: 0: 7, real = 0: 0: 8, mem = 930.7M **
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+ERROR     IMPDC-634            1  Failed to build the timing graph since t...
+WARNING   IMPSP-9513           1  Timing constraint file does not exist    
+WARNING   IMPSP-9514           1  Non-TimingDriven placement will be perfo...
+WARNING   IMPSP-9531           1  Turning off clkGateAware when timingDriv...
+WARNING   IMPSP-9025           1  No scan chain specified/traced.          
+WARNING   IMPSP-9042           1  Scan chains were not defined, -place_glo...
+*** Message Summary: 5 warning(s), 1 error(s)
+
+<CMD> setDrawView place
+<CMD> pan -20.78600 7.28700
+<CMD> uiSetTool ruler
+<CMD> pan -3.61200 229.28250
+<CMD> pan 6.74100 245.81250
+<CMD> pan 51.88800 209.53800
+<CMD> pan 34.22850 121.35050
+<CMD> pan 24.74450 59.87000
+<CMD> pan 120.95500 61.56400
+<CMD> pan -35.32450 -233.05700
+<CMD> pan -46.28000 17.73750
+<CMD> pan 26.37250 44.58850
+<CMD> pan -294.22200 -173.78700
+<CMD> pan -29.66200 43.76800
+<CMD> pan -13.79150 91.15000
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Mon Nov 22 22:12:09 2021
+  Total CPU time:     0:02:55
+  Total real time:    0:58:17
+  Peak memory (main): 761.42MB
+
+
+*** Memory Usage v#1 (Current mem = 1026.680M, initial mem = 251.672M) ***
+*** Message Summary: 22 warning(s), 6 error(s)
+
+--- Ending "Innovus" (totcpu=0:02:55, real=0:58:15, mem=1026.7M) ---
