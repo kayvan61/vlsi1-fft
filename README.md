@@ -1,5 +1,7 @@
 # vlsi1-fft
 FFT for vlsi 1 course at UT Austin
+Saher Elsayed, Ali Mansoorshahi, Pranav Rama
+
 
 # Python Simulation
 Python simulations are provided in a python notebook hosted on google colabs.
